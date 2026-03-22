@@ -1,65 +1,86 @@
-import streamlit as st
+from pathlib import Path
+import sys
 import os
 from dotenv import load_dotenv
-from src.utils.logger import get_logger
-from src.views.b3_view import render_main_page
-from src.controllers.transacao_controller import TransacaoController
+import streamlit as st
 
-# Carrega as senhas secretas do arquivo .env
-load_dotenv()
+# ==========================================
+# BOOTSTRAP DO PROJETO
+# ==========================================
+ROOT_DIR = Path(__file__).resolve().parents[1]
 
-logger = get_logger(__name__)
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+# Carrega o .env da raiz do projeto, se existir
+load_dotenv(ROOT_DIR / ".env")
+
+
+def get_secret(key: str, default=None):
+    """Busca segredo primeiro no st.secrets e depois no .env"""
+    try:
+        if key in st.secrets:
+            return st.secrets[key]
+    except Exception:
+        pass
+    return os.getenv(key, default)
+
 
 def render_tela_login():
     """Desenha a interface de autenticação."""
     st.title("🔒 Acesso Restrito")
     st.markdown("Por favor, identifique-se para acessar o App de Investimentos.")
 
-    # O formulário de login
     with st.form("form_login"):
         usuario = st.text_input("Usuário")
-        senha = st.text_input("Senha", type="password") # Esconde o que é digitado
+        senha = st.text_input("Senha", type="password")
         submit = st.form_submit_button("Entrar")
 
         if submit:
-            # Busca as credenciais seguras que estão no .env
-            user_correto = os.getenv("ADMIN_USER")
-            senha_correta = os.getenv("ADMIN_PASS")
+            user_correto = get_secret("ADMIN_USER")
+            senha_correta = get_secret("ADMIN_PASS")
 
             if usuario == user_correto and senha == senha_correta:
                 st.success("Acesso liberado! Carregando sistema...")
-                st.session_state['autenticado'] = True
-                st.rerun() # Recarrega a página agora com acesso liberado
+                st.session_state["autenticado"] = True
+                st.rerun()
             else:
                 st.error("Usuário ou senha incorretos.")
 
+
 def main() -> None:
     """Ponto de entrada do sistema."""
+    # Esse precisa ser o primeiro comando Streamlit
+    st.set_page_config(page_title="ERP B3", page_icon="📈", layout="wide")
+
     try:
-        # Configuração global da página TEM que ser o primeiro comando do Streamlit
-        st.set_page_config(page_title="ERP B3", page_icon="📈", layout="wide")
+        # Importa módulos do projeto somente depois do bootstrap
+        from src.utils.logger import get_logger
+        from src.views.b3_view import render_main_page
+        from src.controllers.transacao_controller import TransacaoController
 
-        # Inicializa o estado de segurança na memória do navegador
-        if 'autenticado' not in st.session_state:
-            st.session_state['autenticado'] = False
+        logger = get_logger(__name__)
 
-        # O Roteador (Guard)
-        if not st.session_state['autenticado']:
+        if "autenticado" not in st.session_state:
+            st.session_state["autenticado"] = False
+
+        if not st.session_state["autenticado"]:
             render_tela_login()
         else:
             logger.info("Iniciando o sistema B3 ERP...")
-            
-            # Botão de Logout rápido na barra lateral
+
             with st.sidebar:
                 if st.button("🚪 Sair do Sistema"):
-                    st.session_state['autenticado'] = False
+                    st.session_state["autenticado"] = False
                     st.rerun()
 
             controller = TransacaoController()
             render_main_page(controller)
 
     except Exception as e:
-        logger.error(f"Erro fatal na inicialização da aplicação: {e}", exc_info=True)
+        st.error(f"Erro fatal na inicialização da aplicação: {e}")
+        st.exception(e)
+
 
 if __name__ == "__main__":
     main()
