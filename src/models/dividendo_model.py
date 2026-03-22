@@ -1,4 +1,6 @@
 import pandas as pd
+import streamlit as st
+import os
 import gspread
 from src.utils.logger import get_logger
 
@@ -9,12 +11,19 @@ class DividendoModel:
     
     def __init__(self):
         try:
-            self.gc = gspread.service_account(filename="credenciais_google.json")
+            # Verifica se está rodando localmente (VS Code) ou na Nuvem (Streamlit)
+            if os.path.exists("credenciais_google.json"):
+                self.gc = gspread.service_account(filename="credenciais_google.json")
+                logger.info("Conexão via Arquivo Local (Dividendos) estabelecida!")
+            else:
+                credenciais_dict = dict(st.secrets["google_credentials"])
+                self.gc = gspread.service_account_from_dict(credenciais_dict)
+                logger.info("Conexão via Nuvem/Secrets (Dividendos) estabelecida!")
+
             self.planilha = self.gc.open("ERP_B3_Database")
             self.worksheet = self.planilha.worksheet("Dividendos")
         except Exception as e:
-            logger.error(f"Erro ao conectar no Google Sheets: {e}")
-
+            logger.error(f"Erro ao conectar no Google Sheets (Dividendos): {e}")
     def salvar_dividendo(self, data_pagamento: str, ticker: str, tipo_provento: str, 
                          quantidade_base: int, valor_unitario: float, valor_total: float) -> bool:
         try:
