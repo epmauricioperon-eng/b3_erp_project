@@ -1,6 +1,7 @@
 from pathlib import Path
 import gspread
 import streamlit as st
+from streamlit.errors import StreamlitSecretNotFoundError
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -12,25 +13,29 @@ SHEET_NAME = "ERP_B3_Database"
 
 def get_gspread_client():
     """
-    Cria o cliente do Google Sheets.
     Prioridade:
-    1) Streamlit Secrets
-    2) Arquivo local credenciais_google.json
+    1) Arquivo local credenciais_google.json
+    2) Streamlit Secrets
     """
     try:
-        if "google_credentials" in st.secrets:
-            credenciais_dict = dict(st.secrets["google_credentials"])
-            logger.info("Google Sheets autenticado via Streamlit Secrets.")
-            return gspread.service_account_from_dict(credenciais_dict)
-
+        # 1. Tenta arquivo local primeiro
         if CRED_FILE.exists():
             logger.info(f"Google Sheets autenticado via arquivo local: {CRED_FILE}")
             return gspread.service_account(filename=str(CRED_FILE))
 
+        # 2. Se não houver arquivo local, tenta secrets
+        try:
+            if "google_credentials" in st.secrets:
+                credenciais_dict = dict(st.secrets["google_credentials"])
+                logger.info("Google Sheets autenticado via Streamlit Secrets.")
+                return gspread.service_account_from_dict(credenciais_dict)
+        except StreamlitSecretNotFoundError:
+            logger.warning("Nenhum secrets.toml encontrado no ambiente local.")
+
         raise FileNotFoundError(
             f"Credenciais não encontradas. "
-            f"Configure st.secrets['google_credentials'] "
-            f"ou crie o arquivo local em: {CRED_FILE}"
+            f"Esperado arquivo local em: {CRED_FILE} "
+            f"ou st.secrets['google_credentials']."
         )
 
     except Exception as e:
@@ -39,10 +44,6 @@ def get_gspread_client():
 
 
 def open_worksheet(tab_name: str):
-    """
-    Abre uma aba específica da planilha principal.
-    Retorna: (gc, planilha, worksheet)
-    """
     gc = get_gspread_client()
     if gc is None:
         return None, None, None
