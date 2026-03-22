@@ -311,3 +311,65 @@ KeyError: 'tipo'
 2026-03-22 19:45:01,608 - src.models.transacao_model - ERROR - Erro ao ler histórico da Nuvem: 'TransacaoModel' object has no attribute 'worksheet'
 2026-03-22 19:45:01,614 - src.models.transacao_model - ERROR - Erro ao ler histórico da Nuvem: 'TransacaoModel' object has no attribute 'worksheet'
 2026-03-22 19:45:01,617 - src.models.transacao_model - ERROR - Erro ao ler histórico da Nuvem: 'TransacaoModel' object has no attribute 'worksheet'
+2026-03-22 20:38:51,000 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 20:38:51,005 - src.utils.google_sheets - ERROR - Erro ao criar cliente do Google Sheets: No secrets found. Valid paths for a secrets.toml file or secret directories are: C:\Users\mauri\.streamlit\secrets.toml, C:\Users\mauri\Desktop\Learning\b3_erp_project\.streamlit\secrets.toml
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\utils\google_sheets.py", line 21, in get_gspread_client
+    if "google_credentials" in st.secrets:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\streamlit\runtime\secrets.py", line 526, in __contains__
+    return key in self._parse()
+                  ~~~~~~~~~~~^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\streamlit\runtime\secrets.py", line 375, in _parse
+    raise StreamlitSecretNotFoundError(error_msg)
+streamlit.errors.StreamlitSecretNotFoundError: No secrets found. Valid paths for a secrets.toml file or secret directories are: C:\Users\mauri\.streamlit\secrets.toml, C:\Users\mauri\Desktop\Learning\b3_erp_project\.streamlit\secrets.toml
+2026-03-22 20:38:51,012 - src.models.transacao_model - WARNING - TransacaoModel iniciado sem conexão com a aba 'Transacoes'.
+2026-03-22 20:38:51,014 - src.utils.google_sheets - ERROR - Erro ao criar cliente do Google Sheets: No secrets found. Valid paths for a secrets.toml file or secret directories are: C:\Users\mauri\.streamlit\secrets.toml, C:\Users\mauri\Desktop\Learning\b3_erp_project\.streamlit\secrets.toml
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\utils\google_sheets.py", line 21, in get_gspread_client
+    if "google_credentials" in st.secrets:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\streamlit\runtime\secrets.py", line 526, in __contains__
+    return key in self._parse()
+                  ~~~~~~~~~~~^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\streamlit\runtime\secrets.py", line 375, in _parse
+    raise StreamlitSecretNotFoundError(error_msg)
+streamlit.errors.StreamlitSecretNotFoundError: No secrets found. Valid paths for a secrets.toml file or secret directories are: C:\Users\mauri\.streamlit\secrets.toml, C:\Users\mauri\Desktop\Learning\b3_erp_project\.streamlit\secrets.toml
+2026-03-22 20:38:51,019 - src.models.dividendo_model - WARNING - DividendoModel iniciado sem conexão com a aba 'Dividendos'.
+2026-03-22 20:38:51,020 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 20:38:51,033 - src.models.transacao_model - ERROR - Worksheet 'Transacoes' não está inicializado.
+2026-03-22 20:38:51,045 - src.models.transacao_model - ERROR - Worksheet 'Transacoes' não está inicializado.
+2026-03-22 20:38:51,051 - src.models.transacao_model - ERROR - Worksheet 'Transacoes' não está inicializado.
+2026-03-22 20:38:51,054 - src.models.dividendo_model - ERROR - Worksheet 'Dividendos' não está inicializado.
+2026-03-22 20:38:51,099 - src.models.dividendo_model - ERROR - Worksheet 'Dividendos' não está inicializado.
+2026-03-22 20:50:36,693 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 20:50:36,697 - src.utils.google_sheets - ERROR - Erro ao criar cliente do Google Sheets: No secrets found. Valid paths for a secrets.toml file or secret directories are: C:\Users\mauri\.streamlit\secrets.toml, C:\Users\mauri\Desktop\Learning\b3_erp_project\.streamlit\secrets.toml
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\utils\google_sheets.py", line 21, in get_gspread_client
+    if "google_credentials" in st.secrets:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\streamlit\runtime\secrets.py", line 526, in __contains__
+    return key in self._parse()
+                  ~~~~~~~~~~~^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\streamlit\runtime\secrets.py", line 375, in _parse
+    raise StreamlitSecretNotFoundError(error_msg)
+streamlit.errors.StreamlitSecretNotFoundError: No secrets found. Valid paths for a secrets.toml file or secret directories are: C:\Users\mauri\.streamlit\secrets.toml, C:\Users\mauri\Desktop\Learning\b3_erp_project\.streamlit\secrets.toml
+2026-03-22 20:50:36,705 - src.models.transacao_model - WARNING - TransacaoModel iniciado sem conexão com a aba 'Transacoes'.
+2026-03-22 20:50:36,706 - src.utils.google_sheets - ERROR - Erro ao criar cliente do Google Sheets: No secrets found. Valid paths for a secrets.toml file or secret directories are: C:\Users\mauri\.streamlit\secrets.toml, C:\Users\mauri\Desktop\Learning\b3_erp_project\.streamlit\secrets.toml
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\utils\google_sheets.py", line 21, in get_gspread_client
+    if "google_credentials" in st.secrets:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\streamlit\runtime\secrets.py", line 526, in __contains__
+    return key in self._parse()
+                  ~~~~~~~~~~~^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\streamlit\runtime\secrets.py", line 375, in _parse
+    raise StreamlitSecretNotFoundError(error_msg)
+streamlit.errors.StreamlitSecretNotFoundError: No secrets found. Valid paths for a secrets.toml file or secret directories are: C:\Users\mauri\.streamlit\secrets.toml, C:\Users\mauri\Desktop\Learning\b3_erp_project\.streamlit\secrets.toml
+2026-03-22 20:50:36,712 - src.models.dividendo_model - WARNING - DividendoModel iniciado sem conexão com a aba 'Dividendos'.
+2026-03-22 20:50:36,714 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 20:50:36,721 - src.models.transacao_model - ERROR - Worksheet 'Transacoes' não está inicializado.
+2026-03-22 20:50:36,729 - src.models.transacao_model - ERROR - Worksheet 'Transacoes' não está inicializado.
+2026-03-22 20:50:36,739 - src.models.transacao_model - ERROR - Worksheet 'Transacoes' não está inicializado.
+2026-03-22 20:50:36,742 - src.models.dividendo_model - ERROR - Worksheet 'Dividendos' não está inicializado.
+2026-03-22 20:50:36,764 - src.models.dividendo_model - ERROR - Worksheet 'Dividendos' não está inicializado.

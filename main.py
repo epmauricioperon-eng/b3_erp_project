@@ -7,23 +7,30 @@ import streamlit as st
 # ==========================================
 # BOOTSTRAP DO PROJETO
 # ==========================================
-ROOT_DIR = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parent
 
-if str(ROOT_DIR) not in sys.path:
-    sys.path.insert(0, str(ROOT_DIR))
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-# Carrega o .env da raiz do projeto, se existir
-load_dotenv(ROOT_DIR / ".env")
+# Carrega o .env que está na mesma pasta do main.py
+load_dotenv(dotenv_path=PROJECT_ROOT / ".env", override=True)
 
 
 def get_secret(key: str, default=None):
-    """Busca segredo primeiro no st.secrets e depois no .env"""
+    """
+    Busca segredo primeiro no .env/local e depois no st.secrets.
+    """
+    valor_env = os.getenv(key)
+    if valor_env is not None and str(valor_env).strip() != "":
+        return str(valor_env).strip()
+
     try:
         if key in st.secrets:
-            return st.secrets[key]
+            return str(st.secrets[key]).strip()
     except Exception:
         pass
-    return os.getenv(key, default)
+
+    return default
 
 
 def render_tela_login():
@@ -37,10 +44,13 @@ def render_tela_login():
         submit = st.form_submit_button("Entrar")
 
         if submit:
-            user_correto = get_secret("ADMIN_USER")
-            senha_correta = get_secret("ADMIN_PASS")
+            user_correto = (get_secret("ADMIN_USER") or "").strip()
+            senha_correta = (get_secret("ADMIN_PASS") or "").strip()
 
-            if usuario == user_correto and senha == senha_correta:
+            usuario_digitado = usuario.strip()
+            senha_digitada = senha.strip()
+
+            if usuario_digitado == user_correto and senha_digitada == senha_correta:
                 st.success("Acesso liberado! Carregando sistema...")
                 st.session_state["autenticado"] = True
                 st.rerun()
@@ -50,7 +60,6 @@ def render_tela_login():
 
 def main() -> None:
     """Ponto de entrada do sistema."""
-    # Esse precisa ser o primeiro comando Streamlit
     st.set_page_config(page_title="ERP B3", page_icon="📈", layout="wide")
 
     try:
