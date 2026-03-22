@@ -1,0 +1,296 @@
+2026-03-21 16:27:50,108 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 16:27:50,108 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 16:35:18,411 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 16:35:18,411 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 16:39:26,055 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 16:39:26,063 - src.models.transacao_model - INFO - Banco de dados inicializado em: data/transacoes.csv
+2026-03-21 16:39:26,064 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 16:54:56,187 - __main__ - INFO - Iniciando extração de dados da aba 'Compras' em data/planilha_legado.xlsx
+2026-03-21 16:54:56,616 - __main__ - INFO - Sucesso! 51 registros migrados perfeitamente para data/transacoes.csv
+2026-03-21 17:14:43,508 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:14:43,510 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:18:05,109 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:18:05,110 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:18:05,234 - __main__ - ERROR - Erro fatal na inicialização da aplicação: 'TransacaoController' object has no attribute 'obter_posicao_atual'
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\main.py", line 16, in main
+    render_main_page(controller)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\views\b3_view.py", line 17, in render_main_page
+    posicao_df = controller.obter_posicao_atual() # Nossa nova chamada!
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TransacaoController' object has no attribute 'obter_posicao_atual'
+2026-03-21 17:18:29,925 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:18:29,926 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:29:19,678 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:29:19,679 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:29:19,838 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-21 17:30:16,633 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:30:16,634 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:30:16,794 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-21 17:36:34,747 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:36:34,748 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:36:34,912 - __main__ - ERROR - Erro fatal na inicialização da aplicação: cannot unpack non-iterable NoneType object
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\main.py", line 16, in main
+    render_main_page(controller)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\views\b3_view.py", line 36, in render_main_page
+    resumo, posicao_df = controller.obter_painel_consolidado()
+    ^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+2026-03-21 17:37:02,416 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:37:02,417 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:37:02,588 - __main__ - ERROR - Erro fatal na inicialização da aplicação: cannot unpack non-iterable NoneType object
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\main.py", line 16, in main
+    render_main_page(controller)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\views\b3_view.py", line 36, in render_main_page
+    resumo, posicao_df = controller.obter_painel_consolidado()
+    ^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+2026-03-21 17:38:00,855 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:38:00,857 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:38:00,876 - __main__ - ERROR - Erro fatal na inicialização da aplicação: cannot unpack non-iterable NoneType object
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\main.py", line 16, in main
+    render_main_page(controller)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\views\b3_view.py", line 19, in render_main_page
+    caminho_pdf = controller.gerar_relatorio_pdf()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\controllers\transacao_controller.py", line 39, in gerar_relatorio_pdf
+    resumo, df_posicao = self.obter_painel_consolidado()
+    ^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+2026-03-21 17:39:23,460 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:39:23,460 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:39:23,643 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-21 17:39:29,320 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:39:29,321 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:39:29,335 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-21 17:39:30,642 - src.services.pdf_service - INFO - Service: Iniciando montagem do PDF da carteira...
+2026-03-21 17:39:30,650 - src.services.pdf_service - INFO - Service: PDF finalizado e salvo em disco.
+2026-03-21 17:39:30,690 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-21 17:39:37,112 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:39:37,115 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:39:37,139 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-21 17:54:06,462 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 17:54:06,463 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 17:54:06,648 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-21 18:01:36,738 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 18:01:36,740 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 18:01:36,750 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-21 18:08:36,846 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-21 18:08:36,847 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-21 18:08:36,863 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 15:27:23,772 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 15:27:23,777 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 15:27:23,876 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 15:28:32,211 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 15:28:32,214 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 15:28:32,256 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 15:38:53,132 - __main__ - INFO - Iniciando extração de dados da aba 'Dividendos' em data/planilha_legado.xlsx
+2026-03-22 15:38:53,609 - __main__ - ERROR - Uma das colunas esperadas não foi encontrada na aba 'Dividendos'. Erro: 'Preço Unitário'
+2026-03-22 15:40:09,165 - __main__ - INFO - Iniciando extração de dados da aba 'Dividendos' em data/planilha_legado.xlsx
+2026-03-22 15:40:09,513 - __main__ - ERROR - Uma das colunas esperadas não foi encontrada na aba 'Dividendos'. Erro: 'Preço Unitário'
+2026-03-22 15:40:18,463 - __main__ - INFO - Iniciando extração de dados da aba 'Dividendos' em data/planilha_legado.xlsx
+2026-03-22 15:40:18,809 - __main__ - INFO - Sucesso! 127 registros de dividendos migrados perfeitamente para data/dividendos.csv
+2026-03-22 15:40:55,066 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 15:40:55,071 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 15:40:55,151 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:00:42,154 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:00:42,156 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:00:42,175 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:00:56,426 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:00:56,429 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:00:56,460 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:01:05,306 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:01:05,310 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:01:05,342 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:02:02,024 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:02:02,027 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:02:02,060 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:02:06,406 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:02:06,408 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:02:06,432 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:02:08,369 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:02:08,371 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:02:08,390 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:02:23,668 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:02:23,671 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:02:23,693 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:08:48,113 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:08:48,118 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:08:48,187 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:08:58,458 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:08:58,461 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:08:58,491 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:14:51,174 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:14:51,180 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:14:51,248 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:15:16,304 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:15:16,306 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:15:16,330 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:15:22,252 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:15:22,255 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:15:22,285 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:21:41,138 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:21:41,140 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:21:41,152 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 16:29:20,159 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 16:29:20,164 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 16:29:20,240 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 17:13:24,340 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 17:13:25,011 - src.models.transacao_model - ERROR - Erro fatal ao conectar no Google Sheets: APIError: [403]: Google Drive API has not been used in project 754501374197 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/drive.googleapis.com/overview?project=754501374197 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+2026-03-22 17:13:25,626 - src.models.dividendo_model - ERROR - Erro ao conectar no Google Sheets: APIError: [403]: Google Drive API has not been used in project 754501374197 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/drive.googleapis.com/overview?project=754501374197 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+2026-03-22 17:13:25,627 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 17:13:25,632 - src.models.transacao_model - ERROR - Erro ao ler histórico da Nuvem: 'TransacaoModel' object has no attribute 'worksheet'
+2026-03-22 17:13:25,638 - src.models.transacao_model - ERROR - Erro ao ler histórico da Nuvem: 'TransacaoModel' object has no attribute 'worksheet'
+2026-03-22 17:13:25,640 - src.models.transacao_model - ERROR - Erro ao ler histórico da Nuvem: 'TransacaoModel' object has no attribute 'worksheet'
+2026-03-22 17:13:25,643 - src.models.dividendo_model - ERROR - Erro ao ler dividendos da Nuvem: 'DividendoModel' object has no attribute 'worksheet'
+2026-03-22 17:13:25,661 - src.models.dividendo_model - ERROR - Erro ao ler dividendos da Nuvem: 'DividendoModel' object has no attribute 'worksheet'
+2026-03-22 17:20:14,047 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 17:20:16,068 - src.models.transacao_model - INFO - Conexão com Google Sheets (Transações) estabelecida com sucesso!
+2026-03-22 17:20:17,740 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 17:20:18,007 - __main__ - ERROR - Erro fatal na inicialização da aplicação: 'tipo'
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'tipo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\main.py", line 59, in main
+    render_main_page(controller)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\views\b3_view.py", line 34, in render_main_page
+    resumo_rv, posicao_df = controller.obter_painel_consolidado()
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\controllers\transacao_controller.py", line 36, in obter_painel_consolidado
+    resumo = self.model.obter_resumo_carteira()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 60, in obter_resumo_carteira
+    df_compras = df[df['tipo'] == 'COMPRA']
+                    ~~^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'tipo'
+2026-03-22 17:29:24,730 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 17:29:26,439 - src.models.transacao_model - INFO - Conexão com Google Sheets (Transações) estabelecida com sucesso!
+2026-03-22 17:29:28,029 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 17:29:28,317 - __main__ - ERROR - Erro fatal na inicialização da aplicação: 'tipo'
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'tipo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\main.py", line 59, in main
+    render_main_page(controller)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\views\b3_view.py", line 34, in render_main_page
+    resumo_rv, posicao_df = controller.obter_painel_consolidado()
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\controllers\transacao_controller.py", line 36, in obter_painel_consolidado
+    resumo = self.model.obter_resumo_carteira()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 61, in obter_resumo_carteira
+    df_compras = df[df['tipo'] == 'COMPRA']
+                    ~~^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'tipo'
+2026-03-22 17:29:38,844 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 17:29:40,423 - src.models.transacao_model - INFO - Conexão com Google Sheets (Transações) estabelecida com sucesso!
+2026-03-22 17:29:41,947 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 17:29:42,222 - __main__ - ERROR - Erro fatal na inicialização da aplicação: 'tipo'
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'tipo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\main.py", line 59, in main
+    render_main_page(controller)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\views\b3_view.py", line 34, in render_main_page
+    resumo_rv, posicao_df = controller.obter_painel_consolidado()
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\controllers\transacao_controller.py", line 36, in obter_painel_consolidado
+    resumo = self.model.obter_resumo_carteira()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 61, in obter_resumo_carteira
+    df_compras = df[df['tipo'] == 'COMPRA']
+                    ~~^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'tipo'
+2026-03-22 17:29:47,062 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 17:29:48,562 - src.models.transacao_model - INFO - Conexão com Google Sheets (Transações) estabelecida com sucesso!
+2026-03-22 17:29:50,075 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 17:29:50,337 - __main__ - ERROR - Erro fatal na inicialização da aplicação: 'tipo'
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'tipo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\main.py", line 59, in main
+    render_main_page(controller)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\views\b3_view.py", line 34, in render_main_page
+    resumo_rv, posicao_df = controller.obter_painel_consolidado()
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\controllers\transacao_controller.py", line 36, in obter_painel_consolidado
+    resumo = self.model.obter_resumo_carteira()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 61, in obter_resumo_carteira
+    df_compras = df[df['tipo'] == 'COMPRA']
+                    ~~^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'tipo'
+2026-03-22 17:34:55,803 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 17:34:57,669 - src.models.transacao_model - INFO - Conexão com Google Sheets (Transações) estabelecida com sucesso!
+2026-03-22 17:34:59,202 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 17:34:59,758 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 17:35:25,809 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 17:35:27,506 - src.models.transacao_model - INFO - Conexão com Google Sheets (Transações) estabelecida com sucesso!
+2026-03-22 17:35:29,090 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 17:35:29,644 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 17:35:34,141 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 17:35:35,764 - src.models.transacao_model - INFO - Conexão com Google Sheets (Transações) estabelecida com sucesso!
+2026-03-22 17:35:37,413 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 17:35:38,245 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...

@@ -1,0 +1,10 @@
+# Arquivos de Senhas e Chaves (NUNCA SUBIR)
+.env
+credenciais_google.json
+
+# Pastas de dados locais (já estamos usando a nuvem)
+data/
+
+# Pastas do Python e Ambiente Virtual
+__pycache__/
+.venv/
