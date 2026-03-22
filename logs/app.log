@@ -305,3 +305,9 @@ KeyError: 'tipo'
 2026-03-22 19:25:45,201 - src.models.transacao_model - INFO - Conexão com Google Sheets (Transações) estabelecida com sucesso!
 2026-03-22 19:25:46,723 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
 2026-03-22 19:25:47,249 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-22 19:44:59,544 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 19:44:59,549 - src.models.transacao_model - ERROR - Erro fatal ao conectar no Google Sheets: No secrets found. Valid paths for a secrets.toml file or secret directories are: C:\Users\mauri\.streamlit\secrets.toml, C:\Users\mauri\Desktop\Learning\b3_erp_project\.streamlit\secrets.toml
+2026-03-22 19:45:01,583 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 19:45:01,608 - src.models.transacao_model - ERROR - Erro ao ler histórico da Nuvem: 'TransacaoModel' object has no attribute 'worksheet'
+2026-03-22 19:45:01,614 - src.models.transacao_model - ERROR - Erro ao ler histórico da Nuvem: 'TransacaoModel' object has no attribute 'worksheet'
+2026-03-22 19:45:01,617 - src.models.transacao_model - ERROR - Erro ao ler histórico da Nuvem: 'TransacaoModel' object has no attribute 'worksheet'
