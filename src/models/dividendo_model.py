@@ -1,69 +1,96 @@
 import pandas as pd
-import streamlit as st
-import os
-import gspread
 from src.utils.logger import get_logger
+from src.utils.google_sheets import open_worksheet
 
 logger = get_logger(__name__)
 
+
 class DividendoModel:
     """Modelo conectado ao Google Sheets para dividendos."""
-    
-    def __init__(self):
-        try:
-            # Verifica se está rodando localmente (VS Code) ou na Nuvem (Streamlit)
-            if os.path.exists("credenciais_google.json"):
-                self.gc = gspread.service_account(filename="credenciais_google.json")
-                logger.info("Conexão via Arquivo Local (Dividendos) estabelecida!")
-            else:
-                credenciais_dict = dict(st.secrets["google_credentials"])
-                self.gc = gspread.service_account_from_dict(credenciais_dict)
-                logger.info("Conexão via Nuvem/Secrets (Dividendos) estabelecida!")
 
-            self.planilha = self.gc.open("ERP_B3_Database")
-            self.worksheet = self.planilha.worksheet("Dividendos")
-        except Exception as e:
-            logger.error(f"Erro ao conectar no Google Sheets (Dividendos): {e}")
-    def salvar_dividendo(self, data_pagamento: str, ticker: str, tipo_provento: str, 
-                         quantidade_base: int, valor_unitario: float, valor_total: float) -> bool:
+    def __init__(self):
+        self.gc = None
+        self.planilha = None
+        self.worksheet = None
+        self.disponivel = False
+
+        self.gc, self.planilha, self.worksheet = open_worksheet("Dividendos")
+        self.disponivel = self.worksheet is not None
+
+        if not self.disponivel:
+            logger.warning("DividendoModel iniciado sem conexão com a aba 'Dividendos'.")
+
+    def _worksheet_pronto(self) -> bool:
+        if self.worksheet is None:
+            logger.error("Worksheet 'Dividendos' não está inicializado.")
+            return False
+        return True
+
+    def salvar_dividendo(
+        self,
+        data_pagamento: str,
+        ticker: str,
+        tipo_provento: str,
+        quantidade_base: int,
+        valor_unitario: float,
+        valor_total: float
+    ) -> bool:
+        if not self._worksheet_pronto():
+            return False
+
         try:
-            nova_linha = [data_pagamento, ticker.upper(), tipo_provento.upper(), 
-                          quantidade_base, valor_unitario, valor_total]
-            
-            # Manda para a nuvem!
+            nova_linha = [
+                data_pagamento,
+                str(ticker).upper().strip(),
+                str(tipo_provento).upper().strip(),
+                quantidade_base,
+                valor_unitario,
+                valor_total
+            ]
+
             self.worksheet.append_row(nova_linha)
+            logger.info(f"Dividendo de {ticker} salvo com sucesso.")
             return True
+
         except Exception as e:
-            logger.error(f"Erro ao salvar dividendo na Nuvem: {e}")
+            logger.error(f"Erro ao salvar dividendo: {e}", exc_info=True)
             return False
 
     def obter_todos_dividendos(self) -> pd.DataFrame:
+        if not self._worksheet_pronto():
+            return pd.DataFrame()
+
         try:
             dados = self.worksheet.get_all_records()
             if not dados:
                 return pd.DataFrame()
-            
+
             df = pd.DataFrame(dados)
-            # Garante formato numérico
-            colunas_numericas = ['quantidade_base', 'valor_unitario', 'valor_total']
+
+            # Padroniza os nomes das colunas
+            df.columns = [str(col).strip().lower() for col in df.columns]
+
+            colunas_numericas = ["quantidade_base", "valor_unitario", "valor_total"]
             for col in colunas_numericas:
                 if col in df.columns:
-                    df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
-                    
-            df['data_pagamento'] = pd.to_datetime(df['data_pagamento'])
-            df['ano'] = df['data_pagamento'].dt.year
-            df['mes_nome'] = df['data_pagamento'].dt.strftime('%B')
-            df['mes_numero'] = df['data_pagamento'].dt.month
-            
+                    df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+
+            if "data_pagamento" in df.columns:
+                df["data_pagamento"] = pd.to_datetime(df["data_pagamento"], errors="coerce")
+                df["ano"] = df["data_pagamento"].dt.year
+                df["mes_nome"] = df["data_pagamento"].dt.strftime("%B")
+                df["mes_numero"] = df["data_pagamento"].dt.month
+
             return df
+
         except Exception as e:
-            logger.error(f"Erro ao ler dividendos da Nuvem: {e}")
+            logger.error(f"Erro ao ler dividendos: {e}", exc_info=True)
             return pd.DataFrame()
 
     def obter_resumo_dividendos(self) -> dict:
         df = self.obter_todos_dividendos()
-        if df.empty:
+        if df.empty or "valor_total" not in df.columns:
             return {"total_recebido": 0.0}
-        
-        total = df['valor_total'].sum()
+
+        total = df["valor_total"].sum()
         return {"total_recebido": float(total)}
