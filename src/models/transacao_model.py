@@ -1,6 +1,7 @@
 import pandas as pd
 import gspread
 from datetime import datetime
+import streamlit as st
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -10,11 +11,21 @@ class TransacaoModel:
     
     def __init__(self):
         try:
-            # Conecta usando a chave do robô
-            self.gc = gspread.service_account(filename="credenciais_google.json")
+            # Estratégia Híbrida: Tenta ler da Nuvem primeiro, se falhar, lê do Local.
+            if "google_credentials" in st.secrets:
+                # Conecta usando a memória do servidor (Nuvem)
+                credenciais_dict = dict(st.secrets["google_credentials"])
+                self.gc = gspread.service_account_from_dict(credenciais_dict)
+                logger.info("Conexão via Nuvem (Secrets) estabelecida!")
+            else:
+                # Conecta usando o arquivo físico (Seu VS Code)
+                self.gc = gspread.service_account(filename="credenciais_google.json")
+                logger.info("Conexão via Arquivo Local estabelecida!")
+
             self.planilha = self.gc.open("ERP_B3_Database")
             self.worksheet = self.planilha.worksheet("Transacoes")
-            logger.info("Conexão com Google Sheets (Transações) estabelecida com sucesso!")
+            logger.info("Planilha 'Transacoes' aberta com sucesso!")
+            
         except Exception as e:
             logger.error(f"Erro fatal ao conectar no Google Sheets: {e}")
 
