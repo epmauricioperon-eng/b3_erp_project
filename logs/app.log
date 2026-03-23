@@ -373,3 +373,10 @@ streamlit.errors.StreamlitSecretNotFoundError: No secrets found. Valid paths for
 2026-03-22 20:50:36,739 - src.models.transacao_model - ERROR - Worksheet 'Transacoes' não está inicializado.
 2026-03-22 20:50:36,742 - src.models.dividendo_model - ERROR - Worksheet 'Dividendos' não está inicializado.
 2026-03-22 20:50:36,764 - src.models.dividendo_model - ERROR - Worksheet 'Dividendos' não está inicializado.
+2026-03-22 20:54:00,440 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-22 20:54:00,444 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-22 20:54:02,585 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-22 20:54:02,587 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-22 20:54:04,200 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-22 20:54:04,202 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-22 20:54:04,718 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
