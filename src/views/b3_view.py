@@ -63,80 +63,37 @@ def render_main_page(controller) -> None:
     with aba_rv:
         st.subheader("Dashboard de Portfólio e Gestão de Risco")
         if not posicao_df.empty:
-            
-            # Filtra ativos com saldo maior que zero
             df_grafico = posicao_df[posicao_df['valor_atual'] > 0].copy()
             
             if not df_grafico.empty:
-                # --- DIVIDINDO A TELA EM 2 COLUNAS PARA OS GRÁFICOS ---
                 col_donut, col_bar = st.columns(2)
                 
-                # 1. GRÁFICO DE ROSCA (Esquerda)
                 with col_donut:
                     st.markdown("**Composição da Carteira**")
                     fig_carteira = px.pie(
-                        df_grafico, 
-                        values='valor_atual', 
-                        names='ticker', 
-                        hole=0.45
+                        df_grafico, values='valor_atual', names='ticker', hole=0.45
                     )
                     fig_carteira.update_traces(
-                        textposition='inside', 
-                        textinfo='percent+label',
+                        textposition='inside', textinfo='percent+label',
                         marker=dict(line=dict(color='#FFFFFF', width=2))
                     )
-                    fig_carteira.update_layout(
-                        showlegend=False, 
-                        margin=dict(t=10, b=10, l=0, r=0),
-                        height=350
-                    )
+                    fig_carteira.update_layout(showlegend=False, margin=dict(t=10, b=10, l=0, r=0), height=350)
                     st.plotly_chart(fig_carteira, use_container_width=True)
 
-                # 2. GRÁFICO DE BARRAS DE RISCO (Direita)
                 with col_bar:
                     st.markdown("**Exposição por Ativo (Teto 15%)**")
-                    # Ordenar do maior para o menor para o gráfico de barras
                     df_bar = df_grafico.sort_values(by='peso_carteira', ascending=False)
+                    fig_bar = px.bar(df_bar, x='ticker', y='peso_carteira', text='peso_carteira')
                     
-                    fig_bar = px.bar(
-                        df_bar, 
-                        x='ticker', 
-                        y='peso_carteira', 
-                        text='peso_carteira'
-                    )
-                    
-                    # Inteligência de cor: Vermelho se > 15%, Azul padrão se <= 15%
                     cores_barras = ['#FF4B4B' if peso > 15 else '#1F77B4' for peso in df_bar['peso_carteira']]
-                    
-                    fig_bar.update_traces(
-                        texttemplate='%{text:.1f}%', 
-                        textposition='outside',
-                        marker_color=cores_barras
-                    )
-                    
-                    # Adiciona a linha de limite de 15%
-                    fig_bar.add_hline(
-                        y=15, 
-                        line_dash="dash", 
-                        line_color="red", 
-                        annotation_text="Limite 15%", 
-                        annotation_position="top right"
-                    )
-                    
-                    fig_bar.update_layout(
-                        xaxis_title=None, 
-                        yaxis_title="Peso na Carteira (%)",
-                        margin=dict(t=10, b=10, l=0, r=0),
-                        height=350,
-                        yaxis_ticksuffix="%"
-                    )
+                    fig_bar.update_traces(texttemplate='%{text:.1f}%', textposition='outside', marker_color=cores_barras)
+                    fig_bar.add_hline(y=15, line_dash="dash", line_color="red", annotation_text="Limite 15%", annotation_position="top right")
+                    fig_bar.update_layout(xaxis_title=None, yaxis_title="Peso na Carteira (%)", margin=dict(t=10, b=10, l=0, r=0), height=350, yaxis_ticksuffix="%")
                     st.plotly_chart(fig_bar, use_container_width=True)
             
             st.markdown("---")
-
             st.dataframe(
-                posicao_df,
-                use_container_width=True, hide_index=True,
+                posicao_df, use_container_width=True, hide_index=True,
                 column_config={
                     "ticker": "Ativo",
                     "quantidade_total": st.column_config.NumberColumn("Qtd"),
@@ -159,68 +116,69 @@ def render_main_page(controller) -> None:
         
         if not todos_dividendos_df.empty:
             col_filt_1, col_filt_2, col_filt_3 = st.columns([1.5, 1.5, 3])
-            
             anos_disponiveis = sorted(todos_dividendos_df['ano'].unique(), reverse=True)
             ano_atual = datetime.now().year
             if ano_atual not in anos_disponiveis:
                 anos_disponiveis.insert(0, ano_atual)
-            
             ano_selecionado = col_filt_1.selectbox("Ano", anos_disponiveis)
             
             meses_ano_df = todos_dividendos_df[todos_dividendos_df['ano'] == ano_selecionado]
-            meses_disponiveis = sorted(meses_ano_df['mes_nome'].unique())
-            
-            if not meses_disponiveis:
-                meses_disponiveis = ["Todos"]
-            else:
-                meses_disponiveis.insert(0, "Todos")
-                
+            meses_disponiveis = ["Todos"] + sorted(meses_ano_df['mes_nome'].unique()) if not meses_ano_df.empty else ["Todos"]
             mes_selecionado = col_filt_2.selectbox("Mês", meses_disponiveis)
             
-            ativos_disponiveis = sorted(todos_dividendos_df['ticker'].unique())
-            ativos_disponiveis.insert(0, "Todos")
+            ativos_disponiveis = ["Todos"] + sorted(todos_dividendos_df['ticker'].unique())
             ativo_selecionado = col_filt_3.multiselect("Filtrar por Ativo", ativos_disponiveis, default="Todos")
             
             st.markdown("---")
-            
-            df_filtrado = todos_dividendos_df.copy()
-            df_filtrado = df_filtrado[df_filtrado['ano'] == ano_selecionado]
-            
+            df_filtrado = todos_dividendos_df[todos_dividendos_df['ano'] == ano_selecionado]
             if mes_selecionado != "Todos":
                 df_filtrado = df_filtrado[df_filtrado['mes_nome'] == mes_selecionado]
-                
             if "Todos" not in ativo_selecionado and ativo_selecionado:
                 df_filtrado = df_filtrado[df_filtrado['ticker'].isin(ativo_selecionado)]
                 
             if not df_filtrado.empty:
-                dividendos_anuais = df_filtrado.groupby(['mes_nome', 'mes_numero'])['valor_total'].sum().reset_index()
-                dividendos_anuais = dividendos_anuais.sort_values(by='mes_numero')
-                
+                dividendos_anuais = df_filtrado.groupby(['mes_nome', 'mes_numero'])['valor_total'].sum().reset_index().sort_values(by='mes_numero')
                 fig = px.bar(
                     dividendos_anuais, x='mes_nome', y='valor_total', text='valor_total', 
-                    labels={'mes_nome': 'Mês', 'valor_total': 'Valor Recebido (R$)'},
-                    template="plotly_white",
+                    labels={'mes_nome': 'Mês', 'valor_total': 'Valor Recebido (R$)'}, template="plotly_white"
                 )
                 fig.update_traces(
                     marker_color=['#000080' if i % 2 == 0 else '#4169E1' for i in range(len(dividendos_anuais))],
-                    texttemplate='R$ %{text:,.2f}', textposition='outside',
-                    marker_line_color='rgb(8,48,107)', marker_line_width=1.5, opacity=0.8
+                    texttemplate='R$ %{text:,.2f}', textposition='outside', marker_line_color='rgb(8,48,107)', marker_line_width=1.5, opacity=0.8
                 )
-                fig.update_layout(
-                    title_text=f"Evolução de Dividendos em {ano_selecionado}",
-                    xaxis_title=None, yaxis_title=None,
-                    uniformtext_mode='hide', uniformtext_minsize=8
-                )
+                fig.update_layout(title_text=f"Evolução de Dividendos em {ano_selecionado}", xaxis_title=None, yaxis_title=None)
                 st.plotly_chart(fig, use_container_width=True)
                 
                 st.markdown("---")
                 col_res_1, col_res_2 = st.columns(2)
-                total_periodo = df_filtrado['valor_total'].sum()
-                
                 with col_res_1:
-                    st.metric(label=f"Total Recebido em {ano_selecionado}", value=formatar_moeda(total_periodo))
+                    st.metric(label=f"Total Recebido em {ano_selecionado}", value=formatar_moeda(df_filtrado['valor_total'].sum()))
                 with col_res_2:
                     st.metric(label="Total a Receber", value="Em breve...")
+                
+                # --- NOVA UI: TABELA NA ESQUERDA, EXCLUIR NA DIREITA ---
+                st.markdown("---")
+                col_tabela_div, col_perigo_div = st.columns([2.5, 1])
+                
+                with col_tabela_div:
+                    st.markdown("##### 📋 Detalhamento dos Proventos")
+                    st.dataframe(df_filtrado, use_container_width=True, hide_index=True)
+                
+                with col_perigo_div:
+                    st.markdown("##### ⚠️ Excluir Lançamento")
+                    st.write("Identifique o ID na tabela ao lado para removê-lo.")
+                    colunas = df_filtrado.columns.tolist()
+                    col_id_nome = 'id_provento' if 'id_provento' in colunas else ('id_dividendo' if 'id_dividendo' in colunas else colunas[0])
+                    lista_ids_div = df_filtrado[col_id_nome].astype(str).tolist()
+                    id_div_selecionado = st.selectbox("ID do Dividendo", lista_ids_div)
+                    
+                    if st.button("Confirmar Exclusão", type="primary", use_container_width=True, key="btn_del_div"):
+                        sucesso = controller.excluir_dividendo(id_div_selecionado)
+                        if sucesso:
+                            st.success(f"Removido!")
+                            st.rerun()
+                        else:
+                            st.error("Erro ao excluir.")
             else:
                 st.info("Nenhum registro encontrado para os filtros selecionados.")
         else:
@@ -229,14 +187,35 @@ def render_main_page(controller) -> None:
     with aba_historico:
         st.subheader("Histórico Completo (Compras/Vendas)")
         if not historico_df.empty:
-            st.dataframe(historico_df, use_container_width=True, hide_index=True)
+            # --- MESMA UI PREMIUM PARA O HISTÓRICO ---
+            col_tabela_hist, col_perigo_hist = st.columns([2.5, 1])
+            
+            with col_tabela_hist:
+                st.markdown("##### 📋 Extrato de Operações")
+                st.dataframe(historico_df, use_container_width=True, hide_index=True)
+                
+            with col_perigo_hist:
+                st.markdown("##### ⚠️ Excluir Lançamento")
+                st.write("Identifique o ID na tabela ao lado para removê-lo.")
+                if 'id_transacao' in historico_df.columns:
+                    lista_ids = historico_df['id_transacao'].astype(str).tolist()
+                    id_selecionado = st.selectbox("ID da Transação", lista_ids)
+                    
+                    if st.button("Confirmar Exclusão", type="primary", use_container_width=True, key="btn_del_hist"):
+                        sucesso = controller.excluir_transacao(id_selecionado)
+                        if sucesso:
+                            st.success(f"Removido!")
+                            st.rerun()
+                        else:
+                            st.error("Erro ao excluir.")
+                else:
+                    st.warning("Coluna 'id_transacao' não encontrada.")
+        else:
+            st.info("O histórico de transações está vazio.")
 
     with aba_lancamento:
         st.subheader("Central de Lançamentos")
-        tipo_lancamento = st.radio(
-            "O que você deseja registrar hoje?", 
-            ["🛒 Compra / Venda de Ativos", "💰 Recebimento de Proventos"], horizontal=True
-        )
+        tipo_lancamento = st.radio("O que você deseja registrar hoje?", ["🛒 Compra / Venda de Ativos", "💰 Recebimento de Proventos"], horizontal=True)
         st.markdown("---")
 
         if tipo_lancamento == "🛒 Compra / Venda de Ativos":
@@ -248,19 +227,18 @@ def render_main_page(controller) -> None:
 
                 col_d, col_e, col_f = st.columns(3)
                 quantidade = col_d.number_input("Quantidade", min_value=1, step=1)
-                preco_unitario = col_e.number_input("Preço Unitário (R$)", min_value=0.01, step=0.01)
-                taxas = col_f.number_input("Taxas/Emolumentos (R$)", min_value=0.0, step=0.01, value=0.0)
+                preco_unitario = col_e.number_input("Preço Unitário (R$)", min_value=0.01, step=0.01, format="%.2f")
+                taxas = col_f.number_input("Taxas/Emolumentos (R$)", min_value=0.0, step=0.01, value=0.0, format="%.2f")
 
-                submit = st.form_submit_button("Registrar Transação")
-                if submit:
+                if st.form_submit_button("Registrar Transação"):
                     sucesso = controller.registrar_transacao(
                         data_operacao.strftime("%Y-%m-%d"), ticker.strip().upper(), tipo, quantidade, preco_unitario, taxas
                     )
                     if sucesso:
-                        st.success(f"Operação registrada com sucesso!")
+                        st.success("Operação registrada com sucesso!")
                         st.rerun()
                     else:
-                        st.error("Erro ao registrar. Verifique os dados.")
+                        st.error("Erro ao registrar. Verifique os dados e a conexão com o Google Sheets.")
         else:
             with st.form("form_novo_dividendo", clear_on_submit=True):
                 col_a, col_b, col_c = st.columns(3)
@@ -270,11 +248,10 @@ def render_main_page(controller) -> None:
 
                 col_d, col_e, col_f = st.columns(3)
                 quantidade_base = col_d.number_input("Quantidade Base (Opcional)", min_value=0, step=1)
-                valor_unitario = col_e.number_input("Valor por Cota (R$)", min_value=0.00, step=0.01)
-                valor_total = col_f.number_input("Valor Total Recebido (R$)", min_value=0.01, step=0.01)
+                valor_unitario = col_e.number_input("Valor por Cota (R$)", min_value=0.00, step=0.01, format="%.2f")
+                valor_total = col_f.number_input("Valor Total Recebido (R$)", min_value=0.01, step=0.01, format="%.2f")
 
-                submit_div = st.form_submit_button("Registrar Provento")
-                if submit_div:
+                if st.form_submit_button("Registrar Provento"):
                     sucesso = controller.registrar_dividendo(
                         data_pagamento.strftime("%Y-%m-%d"), ticker.strip().upper(), tipo_provento, 
                         quantidade_base, valor_unitario, valor_total

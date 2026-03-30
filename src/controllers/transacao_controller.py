@@ -18,82 +18,151 @@ class TransacaoController:
 
     def registrar_transacao(self, data_operacao: str, ticker: str, tipo: str, 
                             quantidade: int, preco_unitario: float, taxas: float) -> bool:
-        if quantidade <= 0 or preco_unitario <= 0 or taxas < 0:
+        try:
+            if quantidade <= 0 or preco_unitario <= 0 or taxas < 0:
+                logger.warning(f"Tentativa de registro inválido para {ticker}: Valores negativos/zerados.")
+                return False
+            if not ticker or len(ticker.strip()) < 4:
+                logger.warning("Tentativa de registro com Ticker inválido.")
+                return False
+                
+            return self.model.salvar_transacao(data_operacao, ticker, tipo, quantidade, preco_unitario, taxas)
+        
+        except Exception as e:
+            logger.error(f"Controller: Erro ao registrar transação - {e}", exc_info=True)
             return False
-        if not ticker or len(ticker) < 4:
+
+    def excluir_transacao(self, id_transacao: str) -> bool:
+        """Ponte para exclusão de um registro via ID."""
+        try:
+            if not id_transacao:
+                return False
+            return self.model.excluir_transacao(id_transacao)
+        except Exception as e:
+            logger.error(f"Controller: Erro ao excluir transação {id_transacao} - {e}", exc_info=True)
             return False
-        return self.model.salvar_transacao(data_operacao, ticker, tipo, quantidade, preco_unitario, taxas)
 
     def obter_historico(self) -> pd.DataFrame:
-        df = self.model.obter_historico()
-        if not df.empty:
-            df['data_operacao'] = pd.to_datetime(df['data_operacao'])
-            df = df.sort_values(by='data_operacao', ascending=False)
-        return df
+        try:
+            df = self.model.obter_historico()
+            
+            if df is None or df.empty:
+                return pd.DataFrame()
+                
+            if 'data_operacao' in df.columns:
+                df['data_operacao'] = pd.to_datetime(df['data_operacao'], errors='coerce')
+                df = df.sort_values(by='data_operacao', ascending=False)
+            
+            return df
+            
+        except Exception as e:
+            logger.error(f"Controller: Erro ao processar histórico - {e}", exc_info=True)
+            return pd.DataFrame()
 
     def obter_painel_consolidado(self) -> tuple:
         """Gera o painel mestre de ativos com cálculo de peso na carteira."""
-        resumo = self.model.obter_resumo_carteira()
-        df_posicao = self.model.obter_posicao_atual()
+        try:
+            resumo = self.model.obter_resumo_carteira()
+            df_posicao = self.model.obter_posicao_atual()
 
-        if df_posicao.empty:
-            resumo.update({'saldo_atual': 0.0, 'rentabilidade_rs': 0.0, 'rentabilidade_pct': 0.0})
+            # --- AQUI ESTÁ A DEFESA CONTRA A TELA VERMELHA ---
+            if df_posicao is None or df_posicao.empty:
+                logger.info("Nenhuma posição atual encontrada ou falha de conexão. Retornando painel zerado.")
+                resumo_vazio = resumo if isinstance(resumo, dict) else {'total_investido': 0.0, 'qtd_ativos': 0}
+                resumo_vazio.update({'saldo_atual': 0.0, 'rentabilidade_rs': 0.0, 'rentabilidade_pct': 0.0})
+                return resumo_vazio, pd.DataFrame()
+
+            tickers = df_posicao['ticker'].tolist()
+            
+            cotacoes_online = self.cotacao_service.obter_cotacoes_b3(tickers)
+            if not cotacoes_online:
+                logger.warning("Cotações online indisponíveis. Usando último preço médio como fallback.")
+                df_posicao['preco_atual'] = df_posicao['preco_medio']
+            else:
+                df_posicao['preco_atual'] = df_posicao['ticker'].map(cotacoes_online).fillna(df_posicao['preco_medio'])
+
+            df_posicao['valor_atual'] = df_posicao['quantidade_total'] * df_posicao['preco_atual']
+            df_posicao['rentabilidade_rs'] = df_posicao['valor_atual'] - df_posicao['valor_total_investido']
+            
+            df_posicao['rentabilidade_pct'] = df_posicao.apply(
+                lambda row: (row['rentabilidade_rs'] / row['valor_total_investido']) * 100 if row['valor_total_investido'] > 0 else 0,
+                axis=1
+            )
+
+            saldo_atual = df_posicao['valor_atual'].sum()
+            
+            if saldo_atual > 0:
+                df_posicao['peso_carteira'] = (df_posicao['valor_atual'] / saldo_atual) * 100
+            else:
+                df_posicao['peso_carteira'] = 0.0
+                
+            df_posicao['status_rebalanceamento'] = df_posicao['peso_carteira'].apply(
+                lambda x: '🚨 Reduzir' if x > 15 else '✅ OK'
+            )
+
+            total_investido = resumo.get('total_investido', 0.0)
+            rentabilidade_total_rs = saldo_atual - total_investido
+            rentabilidade_total_pct = (rentabilidade_total_rs / total_investido) * 100 if total_investido > 0 else 0.0
+
+            resumo.update({
+                'saldo_atual': saldo_atual,
+                'rentabilidade_rs': rentabilidade_total_rs,
+                'rentabilidade_pct': rentabilidade_total_pct
+            })
+
+            df_posicao = df_posicao.sort_values(by='peso_carteira', ascending=False)
+            
             return resumo, df_posicao
 
-        tickers = df_posicao['ticker'].tolist()
-        cotacoes_online = self.cotacao_service.obter_cotacoes_b3(tickers)
-
-        df_posicao['preco_atual'] = df_posicao['ticker'].map(cotacoes_online)
-        df_posicao['valor_atual'] = df_posicao['quantidade_total'] * df_posicao['preco_atual']
-        
-        df_posicao['rentabilidade_rs'] = df_posicao['valor_atual'] - df_posicao['valor_total_investido']
-        df_posicao['rentabilidade_pct'] = (df_posicao['rentabilidade_rs'] / df_posicao['valor_total_investido']) * 100
-
-        saldo_atual = df_posicao['valor_atual'].sum()
-        
-        # --- NOVA LÓGICA: CÁLCULO DE PESO E REGRA DOS 15% ---
-        if saldo_atual > 0:
-            df_posicao['peso_carteira'] = (df_posicao['valor_atual'] / saldo_atual) * 100
-        else:
-            df_posicao['peso_carteira'] = 0.0
-            
-        # Regra de negócio do Mauricio: Alerta visual se passar de 15%
-        df_posicao['status_rebalanceamento'] = df_posicao['peso_carteira'].apply(
-            lambda x: '🚨 Reduzir' if x > 15 else '✅ OK'
-        )
-        # ----------------------------------------------------
-
-        rentabilidade_total_rs = saldo_atual - resumo['total_investido']
-        rentabilidade_total_pct = 0.0
-        if resumo['total_investido'] > 0:
-            rentabilidade_total_pct = (rentabilidade_total_rs / resumo['total_investido']) * 100
-
-        resumo.update({
-            'saldo_atual': saldo_atual,
-            'rentabilidade_rs': rentabilidade_total_rs,
-            'rentabilidade_pct': rentabilidade_total_pct
-        })
-
-        # Ordena pelos ativos mais pesados primeiro
-        df_posicao = df_posicao.sort_values(by='peso_carteira', ascending=False)
-        return resumo, df_posicao
+        except Exception as e:
+            logger.error(f"Controller: Falha crítica ao gerar painel consolidado - {e}", exc_info=True)
+            return {'total_investido': 0.0, 'saldo_atual': 0.0, 'rentabilidade_rs': 0.0, 'rentabilidade_pct': 0.0}, pd.DataFrame()
 
     def gerar_relatorio_pdf(self) -> str:
-        resumo, df_posicao = self.obter_painel_consolidado()
-        return self.pdf_service.gerar_extrato_carteira(resumo, df_posicao)
+        try:
+            resumo, df_posicao = self.obter_painel_consolidado()
+            return self.pdf_service.gerar_extrato_carteira(resumo, df_posicao)
+        except Exception as e:
+            logger.error(f"Controller: Erro ao acionar PdfService - {e}", exc_info=True)
+            return ""
 
     def registrar_dividendo(self, data_pagamento: str, ticker: str, tipo_provento: str, 
                             quantidade_base: int, valor_unitario: float, valor_total: float) -> bool:
-        if valor_total <= 0:
+        try:
+            if valor_total <= 0:
+                return False
+            if not ticker or len(ticker.strip()) < 4:
+                return False
+            return self.dividendo_model.salvar_dividendo(
+                data_pagamento, ticker, tipo_provento, quantidade_base, valor_unitario, valor_total
+            )
+        except Exception as e:
+            logger.error(f"Controller: Erro ao registrar dividendo - {e}", exc_info=True)
             return False
-        if not ticker or len(ticker) < 4:
-            return False
-        return self.dividendo_model.salvar_dividendo(
-            data_pagamento, ticker, tipo_provento, quantidade_base, valor_unitario, valor_total
-        )
 
     def obter_resumo_dividendos_total(self) -> dict:
-        return self.dividendo_model.obter_resumo_dividendos()
+        try:
+            return self.dividendo_model.obter_resumo_dividendos()
+        except Exception as e:
+            logger.error(f"Controller: Erro ao obter resumo de dividendos - {e}", exc_info=True)
+            return {'total_recebido': 0.0}
 
     def obter_historico_completo_dividendos(self) -> pd.DataFrame:
-        return self.dividendo_model.obter_todos_dividendos()
+        try:
+            df = self.dividendo_model.obter_todos_dividendos()
+            if df is None:
+                return pd.DataFrame()
+            return df
+        except Exception as e:
+            logger.error(f"Controller: Erro ao obter histórico de dividendos - {e}", exc_info=True)
+            return pd.DataFrame()
+        
+    def excluir_dividendo(self, id_provento: str) -> bool:
+        """Ponte para exclusão de um registro de dividendo via ID."""
+        try:
+            if not id_provento:
+                return False
+            return self.dividendo_model.excluir_dividendo(id_provento)
+        except Exception as e:
+            logger.error(f"Controller: Erro ao excluir dividendo {id_provento} - {e}", exc_info=True)
+            return False

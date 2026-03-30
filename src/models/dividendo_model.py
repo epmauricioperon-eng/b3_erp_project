@@ -94,3 +94,30 @@ class DividendoModel:
 
         total = df["valor_total"].sum()
         return {"total_recebido": float(total)}
+    
+    def excluir_dividendo(self, id_provento: str) -> bool:
+        """Localiza e remove uma linha da aba de Dividendos baseada no ID único."""
+        if not self._worksheet_pronto():
+            return False
+            
+        try:
+            todas_as_linhas = self.worksheet.get_all_values()
+            linha_para_excluir = -1
+            
+            # Procura o ID (assumindo que o ID do provento está na primeira coluna - índice 0)
+            for i, linha in enumerate(todas_as_linhas):
+                if str(linha[0]) == str(id_provento):
+                    linha_para_excluir = i + 1 
+                    break
+
+            if linha_para_excluir != -1:
+                self.worksheet.delete_rows(linha_para_excluir)
+                logger.info(f"Dividendo ID {id_provento} excluído com sucesso.")
+                return True
+                
+            logger.warning(f"Dividendo ID {id_provento} não encontrado para exclusão.")
+            return False
+
+        except Exception as e:
+            logger.error(f"Erro ao excluir dividendo {id_provento}: {e}", exc_info=True)
+            return False

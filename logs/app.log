@@ -380,3 +380,126 @@ streamlit.errors.StreamlitSecretNotFoundError: No secrets found. Valid paths for
 2026-03-22 20:54:04,200 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
 2026-03-22 20:54:04,202 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
 2026-03-22 20:54:04,718 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 17:53:36,837 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 17:53:36,841 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 17:54:00,137 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 17:54:00,138 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 17:54:20,085 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 17:54:23,046 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 17:54:23,047 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 17:54:24,084 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 17:54:24,086 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 17:54:46,632 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 17:54:46,633 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 17:54:48,215 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 17:54:48,215 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 17:54:48,983 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 17:56:19,128 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:04:49,882 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:04:49,884 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:04:52,064 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:04:52,112 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:04:54,020 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:04:54,022 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:12:56,090 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:12:56,095 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:13:19,467 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:13:19,468 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:13:25,461 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:13:32,955 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:13:32,967 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:13:42,258 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:13:42,259 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:13:56,276 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:13:56,276 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:14:18,989 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:14:18,990 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:16:29,080 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:16:29,084 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:16:31,201 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:16:31,204 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:16:33,329 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:16:33,331 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:16:34,267 - src.controllers.transacao_controller - INFO - Nenhuma posição atual encontrada ou falha de conexão. Retornando painel zerado.
+2026-03-30 18:23:33,208 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:23:33,213 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:23:35,395 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:23:35,397 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:23:37,146 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:23:37,146 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:23:37,875 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 18:30:22,761 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:30:22,767 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:30:24,886 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:30:24,887 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:30:26,767 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:30:26,768 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:30:27,505 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 18:32:16,499 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:32:16,501 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:32:18,289 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:32:18,291 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:32:18,798 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:32:18,800 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:32:19,978 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:32:19,980 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:32:20,582 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:32:20,583 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:32:21,852 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:32:21,854 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:32:22,356 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:32:22,357 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:32:23,833 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:32:23,834 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:32:25,634 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:32:25,637 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:32:26,266 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 18:32:38,603 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:32:38,605 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:32:40,167 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:32:40,170 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:32:42,062 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:32:42,063 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:32:42,952 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 18:34:25,688 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:34:25,695 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:34:27,618 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:34:27,618 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:34:29,321 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:34:29,322 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:34:30,071 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 18:37:36,290 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:37:36,296 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:37:38,604 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:37:38,607 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:37:40,616 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:37:40,617 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:37:41,526 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 18:38:55,636 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:38:55,640 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:38:57,497 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:38:57,498 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:38:59,344 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:38:59,345 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:39:00,259 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 18:41:52,269 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:41:52,272 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:41:54,341 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:41:54,342 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:41:55,995 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:41:55,996 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:41:56,616 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 18:42:17,557 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:42:17,571 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:42:18,557 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-03-30 18:42:18,562 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:42:19,546 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:42:19,546 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:42:20,352 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-03-30 18:42:20,352 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-03-30 18:42:21,314 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:42:21,314 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:42:21,985 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-03-30 18:42:21,987 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-03-30 18:42:22,608 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-03-30 18:42:36,063 - __main__ - INFO - Iniciando o sistema B3 ERP...
