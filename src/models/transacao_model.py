@@ -39,6 +39,7 @@ class TransacaoModel:
             else:
                 total_operacao = (quantidade * preco_unitario) - taxas
 
+            # Criação do ID único da transação
             id_transacao = datetime.now().strftime("%Y%m%d%H%M%S")
 
             # Formata para o padrão BR antes de enviar pro Sheets
@@ -89,9 +90,8 @@ class TransacaoModel:
             df = pd.DataFrame(dados)
             df.columns = [str(col).strip().lower() for col in df.columns]
 
-            # --- A HIGIENIZAÇÃO INTELIGENTE (O CORAÇÃO DA CORREÇÃO) ---
+            # --- A HIGIENIZAÇÃO INTELIGENTE ---
             def limpar_financeiro(val):
-                # Se a API já mandou um Float puro, NÃO TOCA NELE!
                 if isinstance(val, (int, float)):
                     return float(val)
                 
@@ -99,7 +99,6 @@ class TransacaoModel:
                 if not v_str or v_str.upper() == 'NAN':
                     return 0.0
                 
-                # Só processa se for texto com vírgula do padrão brasileiro
                 if ',' in v_str:
                     v_str = v_str.replace('.', '').replace(',', '.')
                 
@@ -107,7 +106,7 @@ class TransacaoModel:
                     return float(v_str)
                 except ValueError:
                     return 0.0
-            # --------------------------------------------------------
+            # -----------------------------------
 
             colunas_financeiras = ["preco_unitario", "taxas", "total_operacao"]
             for col in colunas_financeiras:
@@ -116,6 +115,13 @@ class TransacaoModel:
 
             if "quantidade" in df.columns:
                 df["quantidade"] = pd.to_numeric(df["quantidade"], errors="coerce").fillna(0)
+
+            # --- VACINA CONTRA ERRO DO PYARROW (Regra 4 - Tipagem Rigorosa) ---
+            colunas_texto = ["id_transacao", "ticker", "tipo", "data_operacao"]
+            for col in colunas_texto:
+                if col in df.columns:
+                    df[col] = df[col].astype(str)
+            # ------------------------------------------------------------------
 
             return df
 
