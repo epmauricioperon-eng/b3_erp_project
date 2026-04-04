@@ -7,75 +7,51 @@ logger = get_logger(__name__)
 
 class ProventosScraperService:
     """
-    Serviço de extração de proventos utilizando o Fundamentus.
-    O Fundamentus é um portal de HTML simples que raramente bloqueia IPs de Nuvem (Datacenters),
-    sendo ideal para deploys gratuitos no Streamlit Cloud.
+    Serviço de extração de proventos focado no StatusInvest.
+    Design limpo e direto para rodar em ambiente Localhost.
     """
     
     def __init__(self):
-        # Um cabeçalho simples fingindo ser um navegador comum já é suficiente aqui
+        # Cabeçalhos realistas para simular um navegador Chrome no Windows
         self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+            'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7'
         }
 
     def buscar_ultimos_dividendos(self, ticker: str) -> pd.DataFrame:
-        """
-        Acessa a página de proventos do Fundamentus, extrai a tabela e formata as 
-        colunas para manter a retrocompatibilidade com o Controller atual.
-        """
-        # A URL direta para a tabela de proventos de qualquer ativo no Fundamentus
-        url = f"https://www.fundamentus.com.br/proventos.php?papel={ticker.upper()}&tipo=2"
+        ticker_limpo = str(ticker).strip().lower()
+        
+        # Mapeamento das 3 possíveis rotas de ativos no StatusInvest
+        rotas = [
+            f"https://statusinvest.com.br/fundos-imobiliarios/{ticker_limpo}",
+            f"https://statusinvest.com.br/fiagros/{ticker_limpo}",
+            f"https://statusinvest.com.br/acoes/{ticker_limpo}"
+        ]
 
-        try:
-            response = requests.get(url, headers=self.headers, timeout=15)
-            response.raise_for_status() 
-            
-            html_io = StringIO(response.text)
-            
-            # O Fundamentus já usa o padrão brasileiro de números (vírgula para decimal)
-            tabelas = pd.read_html(html_io, decimal=',', thousands='.')
-            
-            if tabelas and not tabelas[0].empty:
-                df = tabelas[0]
+        for url in rotas:
+            try:
+                response = requests.get(url, headers=self.headers, timeout=10)
+                response.raise_for_status() 
                 
-                # O Fundamentus retorna: ['Data', 'Valor', 'Tipo', 'Data de Pagamento', 'Por quantas ações']
-                # Precisamos traduzir para a "Língua" que o nosso Controller já entende:
-                df.rename(columns={
-                    'Data': 'DATA COM',
-                    'Data de Pagamento': 'Pagamento',
-                    'Valor': 'Valor',
-                    'Tipo': 'Tipo'
-                }, inplace=True)
+                # Transforma o HTML em texto legível para o Pandas extrair as tabelas
+                html_io = StringIO(response.text)
+                tabelas = pd.read_html(html_io, decimal=',', thousands='.')
                 
-                # Como o Fundamentus pode trazer os dados fora de ordem, forçamos a ordenação
-                # do mais recente para o mais antigo usando a 'DATA COM'
-                df['Data_Temp'] = pd.to_datetime(df['DATA COM'], format='%d/%m/%Y', errors='coerce')
-                df = df.sort_values(by='Data_Temp', ascending=False).drop(columns=['Data_Temp'])
-                
-                logger.info(f"Sucesso ao extrair tabela do Fundamentus para {ticker}")
-                return df
-                
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Erro de rede ao acessar Fundamentus para {ticker}: {e}")
-        except Exception as e:
-            logger.error(f"Erro ao processar dados do Fundamentus para {ticker}: {e}")
+                if tabelas:
+                    df_proventos = tabelas[0]
+                    
+                    # Validação de segurança: É realmente a tabela de dividendos?
+                    if 'DATA COM' in df_proventos.columns and 'Pagamento' in df_proventos.columns:
+                        logger.info(f"Proventos de {ticker.upper()} extraídos com sucesso da rota: {url}")
+                        return df_proventos
+                        
+            except requests.exceptions.HTTPError as e:
+                # O ativo não existe nessa categoria (ex: tentou FII, mas era Ação), pula pra próxima
+                continue
+            except Exception as e:
+                logger.debug(f"Erro ao processar a rota {url} para {ticker}: {e}")
+                continue
 
+        logger.warning(f"Nenhuma tabela de proventos encontrada para {ticker.upper()}.")
         return pd.DataFrame()
-
-
-# --- BLOCO DE TESTE ISOLADO ---
-if __name__ == "__main__":
-    import logging
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
-    
-    logger.info("Iniciando teste isolado do Scraper via Fundamentus...")
-    scraper = ProventosScraperService()
-    
-    ticker_teste = "MXRF11"
-    df_resultado = scraper.buscar_ultimos_dividendos(ticker_teste)
-    
-    if not df_resultado.empty:
-        logger.info(f"Tabela extraída com sucesso para {ticker_teste}!")
-        print(df_resultado.head(3))
-    else:
-        logger.warning(f"O DataFrame retornou vazio para {ticker_teste}.")

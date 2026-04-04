@@ -998,3 +998,297 @@ streamlit.errors.StreamlitSecretNotFoundError: No secrets found. Valid paths for
 2026-04-04 16:31:33,653 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
 2026-04-04 16:31:33,938 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
 2026-04-04 16:31:34,445 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-04 17:08:00,705 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-04 17:08:00,711 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:08:02,858 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:08:02,860 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:08:04,674 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:08:04,684 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-04 17:08:05,409 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-04 17:08:09,748 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:08:11,423 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:08:11,425 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:08:13,255 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:08:13,259 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-04 17:08:14,019 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para CPTS11: No tables found
+2026-04-04 17:08:14,159 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para HGBS11: No tables found
+2026-04-04 17:08:14,287 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para HGLG11: No tables found
+2026-04-04 17:08:14,424 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para KNCR11: No tables found
+2026-04-04 17:08:14,555 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para MXRF11: No tables found
+2026-04-04 17:08:14,674 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para RURA11: No tables found
+2026-04-04 17:08:14,801 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para TRXF11: No tables found
+2026-04-04 17:08:14,937 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para VGIA11: No tables found
+2026-04-04 17:08:14,943 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-04 17:08:15,347 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para CPTS11: No tables found
+2026-04-04 17:08:15,488 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para HGBS11: No tables found
+2026-04-04 17:08:15,625 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para HGLG11: No tables found
+2026-04-04 17:08:15,777 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para KNCR11: No tables found
+2026-04-04 17:08:15,912 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para MXRF11: No tables found
+2026-04-04 17:08:16,050 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para RURA11: No tables found
+2026-04-04 17:08:16,197 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para TRXF11: No tables found
+2026-04-04 17:08:16,338 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para VGIA11: No tables found
+2026-04-04 17:15:09,472 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-04 17:15:09,477 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:15:11,306 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-04 17:15:11,309 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:15:11,833 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:15:11,834 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:15:13,235 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:15:13,236 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:15:13,789 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:15:13,791 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-04 17:15:14,851 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:15:14,854 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-04 17:15:15,702 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-04 17:15:19,944 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:15:21,687 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:15:21,688 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:15:23,325 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:15:23,328 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-04 17:15:24,047 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para CPTS11: No tables found
+2026-04-04 17:15:24,195 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para HGBS11: No tables found
+2026-04-04 17:15:24,330 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para HGLG11: No tables found
+2026-04-04 17:15:24,474 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para KNCR11: No tables found
+2026-04-04 17:15:24,610 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para MXRF11: No tables found
+2026-04-04 17:15:24,733 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para RURA11: No tables found
+2026-04-04 17:15:25,003 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para TRXF11: No tables found
+2026-04-04 17:15:25,157 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para VGIA11: No tables found
+2026-04-04 17:15:25,160 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-04 17:15:25,655 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para CPTS11: No tables found
+2026-04-04 17:15:25,818 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para HGBS11: No tables found
+2026-04-04 17:15:25,949 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para HGLG11: No tables found
+2026-04-04 17:15:26,090 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para KNCR11: No tables found
+2026-04-04 17:15:26,236 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para MXRF11: No tables found
+2026-04-04 17:15:26,380 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para RURA11: No tables found
+2026-04-04 17:15:26,516 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para TRXF11: No tables found
+2026-04-04 17:15:26,648 - src.services.scrapper_service - ERROR - Erro ao processar dados do Fundamentus para VGIA11: No tables found
+2026-04-04 17:26:05,767 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-04 17:26:05,769 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:26:07,793 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:26:07,795 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:26:09,513 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:26:09,515 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-04 17:26:10,120 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-04 17:26:14,283 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:26:15,953 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:26:15,955 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:26:17,681 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:26:17,682 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-04 17:26:18,348 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,349 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,350 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,350 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,351 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,352 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,352 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,353 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,355 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-04 17:26:18,653 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,655 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,656 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,657 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,658 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,660 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,662 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:26:18,666 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:11,970 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-04 17:28:11,976 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:28:14,480 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:28:14,481 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:28:16,320 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:28:16,321 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-04 17:28:16,993 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-04 17:28:21,345 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:28:23,165 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:28:23,167 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:28:24,846 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:28:24,849 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-04 17:28:25,376 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,377 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,378 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,379 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,379 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,380 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,381 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,382 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,387 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-04 17:28:25,763 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,764 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,765 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,766 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,767 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,768 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,769 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:28:25,771 - src.services.scrapper_service - ERROR - BRAPI_TOKEN não encontrado! Cadastre no .env ou nos Secrets.
+2026-04-04 17:32:40,789 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-04 17:32:40,791 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:32:42,616 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:32:42,618 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:32:44,073 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:32:44,075 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-04 17:32:44,591 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-04 17:32:48,753 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:32:50,303 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:32:50,304 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:33:12,970 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:33:12,976 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-04 17:33:14,140 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de CPTS11 no StatusInvest.
+2026-04-04 17:33:14,579 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de HGBS11 no StatusInvest.
+2026-04-04 17:33:14,977 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de HGLG11 no StatusInvest.
+2026-04-04 17:33:15,428 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de KNCR11 no StatusInvest.
+2026-04-04 17:33:15,767 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de MXRF11 no StatusInvest.
+2026-04-04 17:33:16,521 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de RURA11 no StatusInvest.
+2026-04-04 17:33:16,880 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de TRXF11 no StatusInvest.
+2026-04-04 17:33:17,726 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de VGIA11 no StatusInvest.
+2026-04-04 17:33:17,733 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-04 17:33:18,350 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de CPTS11 no StatusInvest.
+2026-04-04 17:33:18,672 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de HGBS11 no StatusInvest.
+2026-04-04 17:33:19,074 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-04 17:33:19,424 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de HGLG11 no StatusInvest.
+2026-04-04 17:33:19,822 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-04 17:33:20,166 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de KNCR11 no StatusInvest.
+2026-04-04 17:33:20,465 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-04 17:33:20,794 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de MXRF11 no StatusInvest.
+2026-04-04 17:33:21,067 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-04 17:33:21,752 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de RURA11 no StatusInvest.
+2026-04-04 17:33:22,033 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-04 17:33:22,390 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de TRXF11 no StatusInvest.
+2026-04-04 17:33:22,764 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-04 17:33:23,469 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de proventos de VGIA11 no StatusInvest.
+2026-04-04 17:47:48,004 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-04 17:47:48,007 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:47:50,291 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:47:50,293 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:47:51,916 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:47:51,917 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-04 17:47:51,924 - src.controllers.transacao_controller - ERROR - Controller: Falha crítica ao gerar painel consolidado - 'TransacaoModel' object has no attribute 'obter_resumo_carteira'
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\controllers\transacao_controller.py", line 65, in obter_painel_consolidado
+    resumo = self.model.obter_resumo_carteira()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TransacaoModel' object has no attribute 'obter_resumo_carteira'
+2026-04-04 17:47:53,670 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:47:55,447 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:47:55,448 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:47:57,308 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:47:57,310 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-04 17:47:58,525 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-04 17:47:58,960 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-04 17:48:00,251 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-04 17:48:01,844 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-04 17:48:03,284 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-04 17:48:04,431 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-04 17:48:04,799 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-04 17:48:06,378 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-04 17:48:06,392 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-04 17:48:07,057 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-04 17:48:07,479 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-04 17:48:08,142 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-04 17:48:08,829 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-04 17:48:09,472 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-04 17:48:10,516 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-04 17:48:11,388 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-04 17:48:12,192 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-04 17:49:42,860 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-04 17:49:42,866 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:49:44,780 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:49:44,781 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:49:46,443 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:49:46,444 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-04 17:49:46,451 - src.controllers.transacao_controller - ERROR - Controller: Falha crítica ao gerar painel consolidado - 'TransacaoModel' object has no attribute 'obter_resumo_carteira'
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\controllers\transacao_controller.py", line 65, in obter_painel_consolidado
+    resumo = self.model.obter_resumo_carteira()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TransacaoModel' object has no attribute 'obter_resumo_carteira'
+2026-04-04 17:49:48,180 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:49:49,887 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:49:49,888 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:49:51,432 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:49:51,434 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-04 17:49:52,499 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-04 17:49:52,909 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-04 17:49:54,343 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-04 17:49:55,774 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-04 17:49:57,316 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-04 17:49:58,249 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-04 17:49:58,699 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-04 17:50:00,324 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-04 17:50:00,338 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-04 17:50:01,419 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-04 17:50:01,762 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-04 17:50:02,383 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-04 17:50:03,042 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-04 17:50:03,691 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-04 17:50:04,753 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-04 17:50:05,436 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-04 17:50:06,447 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-04 17:51:18,410 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-04 17:51:18,412 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:51:20,500 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:51:20,501 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:51:22,133 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:51:22,134 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-04 17:51:22,142 - src.controllers.transacao_controller - ERROR - Controller: Falha crítica ao gerar painel consolidado - 'TransacaoModel' object has no attribute 'obter_resumo_carteira'
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\controllers\transacao_controller.py", line 65, in obter_painel_consolidado
+    resumo = self.model.obter_resumo_carteira()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TransacaoModel' object has no attribute 'obter_resumo_carteira'
+2026-04-04 17:51:23,242 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:51:24,805 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:51:24,806 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:51:26,506 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:51:26,508 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-04 17:51:27,589 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-04 17:51:27,938 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-04 17:51:29,315 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-04 17:51:30,616 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-04 17:51:31,839 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-04 17:51:32,652 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-04 17:51:33,136 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-04 17:51:34,775 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-04 17:51:34,788 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-04 17:51:35,433 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-04 17:51:35,810 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-04 17:51:36,446 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-04 17:51:37,096 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-04 17:51:37,730 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-04 17:51:38,738 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-04 17:51:39,479 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-04 17:51:40,552 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-04 17:53:35,906 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-04 17:53:35,910 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:53:37,949 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:53:37,950 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:53:39,666 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:53:39,667 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-04 17:53:40,362 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-04 17:53:44,203 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:53:45,825 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-04 17:53:45,826 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-04 17:53:47,677 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-04 17:53:47,680 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-04 17:53:48,914 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-04 17:53:49,341 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-04 17:53:50,973 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-04 17:53:52,487 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-04 17:53:53,788 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-04 17:53:54,515 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-04 17:53:55,170 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-04 17:53:56,946 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-04 17:53:56,962 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-04 17:53:57,604 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-04 17:53:57,942 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-04 17:53:58,346 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-04 17:53:58,760 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-04 17:53:59,158 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-04 17:53:59,481 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-04 17:53:59,883 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-04 17:54:00,235 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-04 17:54:00,522 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-04 17:54:01,219 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-04 17:54:01,643 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-04 17:54:02,020 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-04 17:54:02,307 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-04 17:54:02,975 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11

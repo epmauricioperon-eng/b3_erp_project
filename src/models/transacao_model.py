@@ -42,13 +42,19 @@ class TransacaoModel:
             # Criação do ID único da transação
             id_transacao = datetime.now().strftime("%Y%m%d%H%M%S")
 
-            # Formata para o padrão BR antes de enviar pro Sheets
-            preco_ptbr = f"{preco_unitario:.2f}".replace('.', ',')
-            taxas_ptbr = f"{taxas:.2f}".replace('.', ',')
-            total_ptbr = f"{total_operacao:.2f}".replace('.', ',')
+            # CORREÇÃO APLICADA AQUI: Envia os números puros para o Sheets (sem formatar como texto com vírgula)
+            nova_linha = [
+                id_transacao, 
+                data_operacao, 
+                ticker, 
+                tipo, 
+                int(quantidade), 
+                float(preco_unitario), 
+                float(taxas), 
+                float(total_operacao)
+            ]
 
-            nova_linha = [id_transacao, data_operacao, ticker, tipo, quantidade, preco_ptbr, taxas_ptbr, total_ptbr]
-
+            # USER_ENTERED faz o Google Sheets entender que são números nativos
             self.worksheet.append_row(nova_linha, value_input_option="USER_ENTERED")
             logger.info(f"Sucesso: {tipo} de {ticker} salva no Google Sheets.")
             return True
@@ -90,7 +96,7 @@ class TransacaoModel:
             df = pd.DataFrame(dados)
             df.columns = [str(col).strip().lower() for col in df.columns]
 
-            # --- A HIGIENIZAÇÃO INTELIGENTE ---
+            # --- A SUA HIGIENIZAÇÃO ORIGINAL QUE FUNCIONA PERFEITAMENTE ---
             def limpar_financeiro(val):
                 if isinstance(val, (int, float)):
                     return float(val)
@@ -106,7 +112,7 @@ class TransacaoModel:
                     return float(v_str)
                 except ValueError:
                     return 0.0
-            # -----------------------------------
+            # -------------------------------------------------------------
 
             colunas_financeiras = ["preco_unitario", "taxas", "total_operacao"]
             for col in colunas_financeiras:
@@ -116,7 +122,7 @@ class TransacaoModel:
             if "quantidade" in df.columns:
                 df["quantidade"] = pd.to_numeric(df["quantidade"], errors="coerce").fillna(0)
 
-            # --- VACINA CONTRA ERRO DO PYARROW (Regra 4 - Tipagem Rigorosa) ---
+            # --- SUA VACINA ORIGINAL CONTRA ERRO DO PYARROW ---
             colunas_texto = ["id_transacao", "ticker", "tipo", "data_operacao"]
             for col in colunas_texto:
                 if col in df.columns:
@@ -169,36 +175,24 @@ class TransacaoModel:
         return carteira
     
     def obter_quantidade_na_data_com(self, ticker: str, data_com_str: str) -> int:
-        """
-        Calcula a quantidade exata de cotas que o usuário possuía até a Data Com.
-        data_com_str: formato esperado 'DD/MM/YYYY' (padrão que vem do scraper).
-        """
         df = self.obter_historico()
         
         if df.empty:
             return 0
 
-        # 1. Filtra apenas o ativo desejado
         df_ativo = df[df["ticker"] == ticker.upper()].copy()
         if df_ativo.empty:
             return 0
 
         try:
-            # 2. Harmonização de Datas (O maior desafio em análise de dados)
-            # Converte a data de operação do seu banco (que vi na imagem que é YYYY-MM-DD HH:MM:SS)
             df_ativo["data_operacao_dt"] = pd.to_datetime(df_ativo["data_operacao"])
-            
-            # Converte a data que o scraper trouxe da internet (DD/MM/YYYY)
             data_com_dt = pd.to_datetime(data_com_str, format="%d/%m/%Y")
             
-            # 3. O Filtro Temporal (A Máquina do Tempo)
-            # Pega apenas as operações que aconteceram ANTES ou NO DIA da Data Com
             df_valido = df_ativo[df_ativo["data_operacao_dt"].dt.date <= data_com_dt.date()]
             
             if df_valido.empty:
                 return 0
 
-            # 4. Cálculo Real da Posição (Compras - Vendas)
             compras = df_valido[df_valido["tipo"] == "COMPRA"]["quantidade"].sum()
             vendas = df_valido[df_valido["tipo"] == "VENDA"]["quantidade"].sum()
             
