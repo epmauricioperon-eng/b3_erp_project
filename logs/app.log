@@ -503,3 +503,428 @@ streamlit.errors.StreamlitSecretNotFoundError: No secrets found. Valid paths for
 2026-03-30 18:42:21,987 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
 2026-03-30 18:42:22,608 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
 2026-03-30 18:42:36,063 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 19:51:58,512 - __main__ - INFO - Iniciando teste isolado do Scraper de Dividendos...
+2026-04-03 19:51:58,513 - __main__ - INFO - Buscando dados de proventos para MXRF11 em: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 19:51:59,302 - __main__ - INFO - Sucesso ao extrair tabela de MXRF11.
+2026-04-03 19:51:59,303 - __main__ - INFO - Tabela extraída com sucesso para MXRF11! Inspecionando os dados:
+2026-04-03 19:51:59,310 - __main__ - INFO - Colunas encontradas na tabela:
+2026-04-03 19:55:40,328 - __main__ - INFO - Iniciando teste isolado do Scraper de Dividendos...
+2026-04-03 19:55:40,328 - __main__ - INFO - Buscando dados de proventos para MXRF11 em: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 19:55:40,714 - __main__ - INFO - Sucesso ao extrair tabela de MXRF11.
+2026-04-03 19:55:40,715 - __main__ - INFO - Tabela extraída com sucesso para MXRF11! Inspecionando os dados:
+2026-04-03 19:55:40,720 - __main__ - INFO - Colunas encontradas na tabela:
+2026-04-03 20:03:53,238 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:03:55,128 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 20:03:55,128 - __main__ - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 20:03:55,528 - __main__ - INFO - Processando previsão para CPTS11...
+2026-04-03 20:03:55,529 - src.services.scrapper_service - INFO - Buscando dados de proventos para CPTS11 em: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 20:03:56,151 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11.
+2026-04-03 20:03:56,409 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (11/03/2026): 379 cotas elegíveis.
+2026-04-03 20:03:56,410 - __main__ - INFO - Processando previsão para HGBS11...
+2026-04-03 20:03:56,410 - src.services.scrapper_service - INFO - Buscando dados de proventos para HGBS11 em: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 20:03:56,865 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11.
+2026-04-03 20:03:57,125 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 20:03:57,125 - __main__ - INFO - Processando previsão para HGLG11...
+2026-04-03 20:03:57,125 - src.services.scrapper_service - INFO - Buscando dados de proventos para HGLG11 em: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 20:03:57,559 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11.
+2026-04-03 20:03:57,824 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 20:03:57,825 - __main__ - INFO - Processando previsão para KNCR11...
+2026-04-03 20:03:57,825 - src.services.scrapper_service - INFO - Buscando dados de proventos para KNCR11 em: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 20:03:58,314 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11.
+2026-04-03 20:03:58,578 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 20:03:58,578 - __main__ - INFO - Processando previsão para MXRF11...
+2026-04-03 20:03:58,578 - src.services.scrapper_service - INFO - Buscando dados de proventos para MXRF11 em: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 20:03:58,932 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11.
+2026-04-03 20:03:59,180 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 20:03:59,181 - __main__ - INFO - Processando previsão para RURA11...
+2026-04-03 20:03:59,181 - src.services.scrapper_service - INFO - Buscando dados de proventos para RURA11 em: https://statusinvest.com.br/fundos-imobiliarios/rura11
+2026-04-03 20:03:59,688 - src.services.scrapper_service - ERROR - Nenhuma tabela encontrada no HTML para RURA11: No tables found
+2026-04-03 20:03:59,689 - __main__ - INFO - Processando previsão para TRXF11...
+2026-04-03 20:03:59,689 - src.services.scrapper_service - INFO - Buscando dados de proventos para TRXF11 em: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 20:04:00,122 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11.
+2026-04-03 20:04:00,388 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 20:04:00,389 - __main__ - INFO - Processando previsão para VGIA11...
+2026-04-03 20:04:00,390 - src.services.scrapper_service - INFO - Buscando dados de proventos para VGIA11 em: https://statusinvest.com.br/fundos-imobiliarios/vgia11
+2026-04-03 20:04:00,686 - src.services.scrapper_service - ERROR - Nenhuma tabela encontrada no HTML para VGIA11: No tables found
+2026-04-03 20:04:00,687 - __main__ - INFO - Motor concluído com sucesso. 6 lançamentos projetados.
+2026-04-03 20:13:34,301 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:13:36,183 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 20:13:36,183 - __main__ - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 20:13:36,574 - __main__ - INFO - Processando previsão para CPTS11...
+2026-04-03 20:13:37,069 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 20:13:37,338 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (11/03/2026): 379 cotas elegíveis.
+2026-04-03 20:13:37,338 - __main__ - INFO - Processando previsão para HGBS11...
+2026-04-03 20:13:37,785 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 20:13:38,031 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 20:13:38,031 - __main__ - INFO - Processando previsão para HGLG11...
+2026-04-03 20:13:38,366 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 20:13:38,610 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 20:13:38,610 - __main__ - INFO - Processando previsão para KNCR11...
+2026-04-03 20:13:38,952 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 20:13:39,205 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 20:13:39,206 - __main__ - INFO - Processando previsão para MXRF11...
+2026-04-03 20:13:39,636 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 20:13:39,878 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 20:13:39,879 - __main__ - INFO - Processando previsão para RURA11...
+2026-04-03 20:13:40,626 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 20:13:40,871 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 20:13:40,872 - __main__ - INFO - Processando previsão para TRXF11...
+2026-04-03 20:13:41,293 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 20:13:41,554 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 20:13:41,554 - __main__ - INFO - Processando previsão para VGIA11...
+2026-04-03 20:13:42,156 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 20:13:42,405 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (11/03/2026): 372 cotas elegíveis.
+2026-04-03 20:13:42,406 - __main__ - INFO - Motor concluído com sucesso. 8 lançamentos projetados.
+2026-04-03 20:16:37,462 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:16:38,867 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 20:16:38,868 - __main__ - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 20:16:39,145 - __main__ - INFO - Processando previsão para CPTS11...
+2026-04-03 20:16:39,621 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 20:16:39,624 - __main__ - INFO - CPTS11: O último dividendo (18/03/2026) já foi pago. Aguardando novo anúncio.
+2026-04-03 20:16:39,624 - __main__ - INFO - Processando previsão para HGBS11...
+2026-04-03 20:16:40,105 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 20:16:40,364 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 20:16:40,365 - __main__ - INFO - Processando previsão para HGLG11...
+2026-04-03 20:16:40,833 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 20:16:41,090 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 20:16:41,091 - __main__ - INFO - Processando previsão para KNCR11...
+2026-04-03 20:16:41,619 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 20:16:41,879 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 20:16:41,880 - __main__ - INFO - Processando previsão para MXRF11...
+2026-04-03 20:16:42,218 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 20:16:42,481 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 20:16:42,482 - __main__ - INFO - Processando previsão para RURA11...
+2026-04-03 20:16:43,148 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 20:16:43,404 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 20:16:43,404 - __main__ - INFO - Processando previsão para TRXF11...
+2026-04-03 20:16:43,754 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 20:16:44,007 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 20:16:44,008 - __main__ - INFO - Processando previsão para VGIA11...
+2026-04-03 20:16:44,571 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 20:16:44,572 - __main__ - INFO - VGIA11: O último dividendo (18/03/2026) já foi pago. Aguardando novo anúncio.
+2026-04-03 20:16:44,573 - __main__ - INFO - Motor concluído com sucesso. 6 lançamentos projetados.
+2026-04-03 20:26:00,899 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 20:26:00,903 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:26:02,880 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 20:26:02,881 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:26:04,366 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 20:26:04,367 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-03 20:26:05,014 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-03 20:26:14,135 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:26:15,664 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 20:26:15,667 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 20:26:15,954 - src.controllers.proventos_controller - INFO - Processando previsão para CPTS11...
+2026-04-03 20:26:16,346 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 20:26:16,351 - src.controllers.proventos_controller - INFO - CPTS11: O último dividendo (18/03/2026) já foi pago. Aguardando novo anúncio.
+2026-04-03 20:26:16,351 - src.controllers.proventos_controller - INFO - Processando previsão para HGBS11...
+2026-04-03 20:26:16,821 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 20:26:17,090 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 20:26:17,092 - src.controllers.proventos_controller - INFO - Processando previsão para HGLG11...
+2026-04-03 20:26:17,562 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 20:26:17,824 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 20:26:17,825 - src.controllers.proventos_controller - INFO - Processando previsão para KNCR11...
+2026-04-03 20:26:18,296 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 20:26:18,550 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 20:26:18,551 - src.controllers.proventos_controller - INFO - Processando previsão para MXRF11...
+2026-04-03 20:26:19,038 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 20:26:19,294 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 20:26:19,297 - src.controllers.proventos_controller - INFO - Processando previsão para RURA11...
+2026-04-03 20:26:20,238 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 20:26:20,495 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 20:26:20,496 - src.controllers.proventos_controller - INFO - Processando previsão para TRXF11...
+2026-04-03 20:26:20,907 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 20:26:21,161 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 20:26:21,162 - src.controllers.proventos_controller - INFO - Processando previsão para VGIA11...
+2026-04-03 20:26:22,095 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 20:26:22,097 - src.controllers.proventos_controller - INFO - VGIA11: O último dividendo (18/03/2026) já foi pago. Aguardando novo anúncio.
+2026-04-03 20:26:22,098 - src.controllers.proventos_controller - INFO - Motor concluído com sucesso. 6 lançamentos projetados.
+2026-04-03 20:43:07,747 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 20:43:07,751 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:43:09,812 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 20:43:09,813 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:43:11,326 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 20:43:11,328 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-03 20:43:12,082 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-03 20:43:15,831 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:43:17,367 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 20:43:17,369 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 20:43:17,644 - src.controllers.proventos_controller - INFO - Processando previsão para CPTS11...
+2026-04-03 20:43:18,098 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 20:43:18,104 - src.controllers.proventos_controller - INFO - CPTS11: O último dividendo (18/03/2026) já foi pago. Aguardando novo anúncio.
+2026-04-03 20:43:18,110 - src.controllers.proventos_controller - INFO - Processando previsão para HGBS11...
+2026-04-03 20:43:18,579 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 20:43:18,850 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 20:43:18,852 - src.controllers.proventos_controller - INFO - Processando previsão para HGLG11...
+2026-04-03 20:43:19,350 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 20:43:19,611 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 20:43:19,613 - src.controllers.proventos_controller - INFO - Processando previsão para KNCR11...
+2026-04-03 20:43:19,965 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 20:43:20,230 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 20:43:20,231 - src.controllers.proventos_controller - INFO - Processando previsão para MXRF11...
+2026-04-03 20:43:20,566 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 20:43:20,826 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 20:43:20,829 - src.controllers.proventos_controller - INFO - Processando previsão para RURA11...
+2026-04-03 20:43:21,579 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 20:43:21,847 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 20:43:21,847 - src.controllers.proventos_controller - INFO - Processando previsão para TRXF11...
+2026-04-03 20:43:22,272 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 20:43:22,543 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 20:43:22,544 - src.controllers.proventos_controller - INFO - Processando previsão para VGIA11...
+2026-04-03 20:43:23,213 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 20:43:23,215 - src.controllers.proventos_controller - INFO - VGIA11: O último dividendo (18/03/2026) já foi pago. Aguardando novo anúncio.
+2026-04-03 20:43:23,217 - src.controllers.proventos_controller - INFO - Motor concluído com sucesso. 6 lançamentos projetados.
+2026-04-03 20:51:08,101 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 20:51:08,106 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:51:31,181 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 20:51:31,182 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:51:32,652 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 20:51:32,656 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-03 20:51:33,363 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-03 20:51:37,119 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 20:51:38,641 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 20:51:38,644 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 20:51:38,949 - src.controllers.proventos_controller - INFO - Processando previsão para CPTS11...
+2026-04-03 20:51:39,485 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 20:51:39,492 - src.controllers.proventos_controller - INFO - CPTS11: O último dividendo (18/03/2026) já foi pago. Aguardando novo anúncio.
+2026-04-03 20:51:39,494 - src.controllers.proventos_controller - INFO - Processando previsão para HGBS11...
+2026-04-03 20:51:39,973 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 20:51:40,263 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 20:51:40,265 - src.controllers.proventos_controller - INFO - Processando previsão para HGLG11...
+2026-04-03 20:51:40,597 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 20:51:40,869 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 20:51:40,869 - src.controllers.proventos_controller - INFO - Processando previsão para KNCR11...
+2026-04-03 20:51:41,291 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 20:51:41,572 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 20:51:41,573 - src.controllers.proventos_controller - INFO - Processando previsão para MXRF11...
+2026-04-03 20:51:42,136 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 20:51:42,410 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 20:51:42,411 - src.controllers.proventos_controller - INFO - Processando previsão para RURA11...
+2026-04-03 20:51:43,351 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 20:51:43,611 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 20:51:43,612 - src.controllers.proventos_controller - INFO - Processando previsão para TRXF11...
+2026-04-03 20:51:44,032 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 20:51:44,297 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 20:51:44,297 - src.controllers.proventos_controller - INFO - Processando previsão para VGIA11...
+2026-04-03 20:51:45,116 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 20:51:45,118 - src.controllers.proventos_controller - INFO - VGIA11: O último dividendo (18/03/2026) já foi pago. Aguardando novo anúncio.
+2026-04-03 20:51:45,120 - src.controllers.proventos_controller - INFO - Motor concluído com sucesso. 6 lançamentos projetados.
+2026-04-03 21:15:49,102 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 21:15:49,108 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:15:51,032 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:15:51,032 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:15:52,535 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:15:52,536 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-03 21:15:53,200 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-03 21:15:57,260 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:15:58,796 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:19:42,108 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 21:19:42,111 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:19:43,849 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:19:43,850 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:19:45,364 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:19:45,366 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-03 21:19:45,953 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-03 21:19:50,109 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:19:51,555 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:19:51,556 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:19:52,823 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:19:52,824 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-03 21:19:53,628 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 21:19:53,994 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 21:19:54,334 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 21:19:54,560 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 21:19:55,027 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 21:19:55,634 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 21:19:55,916 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 21:19:56,417 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 21:19:56,418 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 21:19:56,960 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 21:19:57,220 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 21:19:57,475 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 21:19:57,737 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 21:19:57,983 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 21:19:58,259 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 21:19:58,513 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 21:19:58,773 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 21:19:59,028 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 21:19:59,503 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 21:19:59,749 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 21:20:00,043 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 21:20:00,312 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 21:20:00,810 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 21:20:25,905 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 21:20:25,907 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:20:27,421 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:20:27,422 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:20:28,918 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:20:28,919 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-03 21:20:29,477 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-03 21:20:32,210 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:20:33,729 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:20:33,730 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:20:35,283 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:20:35,283 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-03 21:20:36,250 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 21:20:36,636 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 21:20:37,114 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 21:20:37,601 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 21:20:38,001 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 21:20:38,654 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 21:20:39,059 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 21:20:39,722 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 21:20:39,727 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 21:20:40,419 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 21:20:40,736 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 21:20:41,021 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 21:20:41,362 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 21:20:41,628 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 21:20:41,939 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 21:20:42,204 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 21:20:42,538 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 21:20:42,795 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 21:20:43,442 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 21:20:43,735 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 21:20:44,157 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 21:20:44,430 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 21:20:45,131 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 21:25:10,024 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 21:25:10,028 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:25:11,789 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:25:11,790 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:25:13,360 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:25:13,361 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-03 21:25:13,917 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-03 21:25:18,060 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:25:19,523 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:25:19,524 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:25:21,016 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:25:21,018 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-03 21:25:21,977 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 21:25:22,381 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 21:25:22,889 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 21:25:23,299 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 21:25:23,638 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 21:25:24,742 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 21:25:25,172 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 21:25:25,914 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 21:25:25,920 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 21:25:26,515 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 21:25:26,935 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 21:25:27,197 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 21:25:27,596 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 21:25:27,851 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 21:25:28,189 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 21:25:28,451 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 21:25:28,765 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 21:25:29,036 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 21:25:29,713 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 21:25:29,976 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 21:25:30,401 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 21:25:30,651 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 21:25:31,442 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 21:27:02,510 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 21:27:02,512 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:27:04,084 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:27:04,086 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:27:05,559 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:27:05,564 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-03 21:27:06,201 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-03 21:27:09,124 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:27:10,653 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:27:10,654 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:27:12,176 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:27:12,179 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-03 21:27:13,222 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 21:27:13,894 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 21:27:14,314 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 21:27:14,632 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 21:27:15,148 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 21:27:15,856 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 21:27:16,218 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 21:27:16,975 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 21:27:16,981 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 21:27:17,607 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 21:27:18,026 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 21:27:18,294 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 21:27:18,708 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 21:27:18,982 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 21:27:19,361 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 21:27:19,632 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 21:27:19,964 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 21:27:20,243 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 21:27:20,875 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 21:27:21,158 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 21:27:21,587 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 21:27:21,857 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 21:27:22,503 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 21:27:27,710 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 21:27:27,713 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:27:29,278 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:27:29,280 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:27:30,728 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:27:30,729 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-03 21:27:31,289 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-03 21:27:34,304 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:27:35,833 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 21:27:35,834 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 21:27:37,329 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 21:27:37,332 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-03 21:27:38,249 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 21:27:38,679 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 21:27:39,267 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 21:27:39,610 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 21:27:39,924 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 21:27:40,698 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 21:27:41,196 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 21:27:41,913 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 21:27:41,919 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 21:27:42,510 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 21:27:42,844 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 21:27:43,122 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 21:27:43,444 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 21:27:43,707 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 21:27:44,248 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 21:27:44,541 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 21:27:45,035 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 21:27:45,302 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 21:27:46,035 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 21:27:46,289 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 21:27:46,684 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 21:27:46,947 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 21:27:47,592 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 21:47:54,495 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 23:30:02,201 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-03 23:30:02,205 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 23:30:04,189 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 23:30:04,190 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 23:30:05,814 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 23:30:05,814 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-03 23:30:06,475 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-03 23:30:10,224 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 23:30:11,719 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-03 23:30:11,721 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-03 23:30:13,209 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-03 23:30:13,211 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-03 23:30:14,110 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 23:30:14,417 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 23:30:14,758 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 23:30:15,188 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 23:30:15,586 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 23:30:16,453 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 23:30:16,882 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 23:30:17,690 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11
+2026-04-03 23:30:17,699 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-03 23:30:18,295 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de CPTS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-03 23:30:18,678 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGBS11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-03 23:30:19,009 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-03 23:30:19,325 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de HGLG11 na URL: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-03 23:30:19,774 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-03 23:30:20,182 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de KNCR11 na URL: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-03 23:30:20,443 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-03 23:30:20,854 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de MXRF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-03 23:30:21,126 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-03 23:30:21,812 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de RURA11 na URL: https://statusinvest.com.br/fiagros/rura11
+2026-04-03 23:30:22,159 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-03 23:30:22,605 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de TRXF11 na URL: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-03 23:30:22,868 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-03 23:30:24,007 - src.services.scrapper_service - INFO - Sucesso ao extrair tabela de VGIA11 na URL: https://statusinvest.com.br/fiagros/vgia11

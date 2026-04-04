@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 from datetime import datetime
 from src.utils.logger import get_logger
+from src.controllers.proventos_controller import ProventosController
 
 logger = get_logger(__name__)
 
@@ -96,7 +97,7 @@ def render_main_page(controller) -> None:
                 posicao_df, use_container_width=True, hide_index=True,
                 column_config={
                     "ticker": "Ativo",
-                    "quantidade_total": st.column_config.NumberColumn("Qtd"),
+                    "quantidade_total": st.column_config.NumberColumn("Quantidade"),
                     "preco_medio": st.column_config.NumberColumn("Preço Médio", format="R$ %.2f"),
                     "valor_total_investido": st.column_config.NumberColumn("Total Investido", format="R$ %.2f"),
                     "preco_atual": st.column_config.NumberColumn("Cotação Atual", format="R$ %.2f"),
@@ -104,9 +105,15 @@ def render_main_page(controller) -> None:
                     "peso_carteira": st.column_config.NumberColumn("Peso (%)", format="%.2f %%"),
                     "status_rebalanceamento": "Ação (Regra 15%)",
                     "rentabilidade_rs": st.column_config.NumberColumn("Lucro/Prejuízo", format="R$ %.2f"),
-                    "rentabilidade_pct": st.column_config.NumberColumn("Rentab. (%)", format="%.2f %%")
+                    "rentabilidade_pct": st.column_config.NumberColumn("Rentabilidade (%)", format="%.2f %%"),
+                    # --- OPÇÃO 1: FORMATANDO A COLUNA ---
+                    "total_dividendos_recebidos": st.column_config.NumberColumn("Total Div. Recebidos", format="R$ %.2f"),
+                    
+                    # --- A NOVA COLUNA DE YOC AQUI ---
+                    "yoc_pct": st.column_config.NumberColumn("YOC (%)", format="%.2f %%", help="Yield on Cost: Retorno de dividendos sobre o seu capital investido.")
                 }
             )
+          
         else:
             st.info("Sua carteira está vazia.")
 
@@ -149,45 +156,81 @@ def render_main_page(controller) -> None:
                 fig.update_layout(title_text=f"Evolução de Dividendos em {ano_selecionado}", xaxis_title=None, yaxis_title=None)
                 st.plotly_chart(fig, use_container_width=True)
                 
+                # --- NOVO FLUXO: CONCILIAÇÃO E CHECKLIST ---
                 st.markdown("---")
+                proventos_ctrl = ProventosController()
+                
+                # 1. Busca proventos que já deveriam ter caído (Data Pagamento <= Hoje)
+                with st.spinner("Verificando se há dinheiro novo na sua conta..."):
+                    pendentes = proventos_ctrl.obter_proventos_pendentes_de_confirmacao()
+                
+                if pendentes:
+                    st.info(f"🔔 **Atenção:** Identificamos {len(pendentes)} proventos que já atingiram a data de pagamento. Verifique seu extrato bancário e confirme abaixo:")
+                    
+                    df_pendentes = pd.DataFrame(pendentes)
+                    # Adiciona a coluna de checklist (booleana)
+                    df_pendentes.insert(0, "Selecionar", False)
+                    
+                    # Tabela Interativa de Checklist
+                    df_selecao = st.data_editor(
+                        df_pendentes,
+                        column_config={
+                            "Selecionar": st.column_config.CheckboxColumn(default=False),
+                            "ticker": "Ativo",
+                            "data_pagamento": "Data",
+                            "valor_total": st.column_config.NumberColumn("Valor Total", format="R$ %.2f"),
+                            "quantidade_base": "Cotas",
+                            "tipo_provento": "Tipo"
+                        },
+                        disabled=["ticker", "data_pagamento", "valor_total", "quantidade_base", "tipo_provento"],
+                        hide_index=True,
+                        use_container_width=True
+                    )
+                    
+                    # Filtra apenas o que o usuário marcou no checklist
+                    selecionados = df_selecao[df_selecao["Selecionar"] == True].to_dict('records')
+                    
+                    if selecionados:
+                        col_auth, col_btn = st.columns([2, 1])
+                        with col_auth:
+                            senha_confirmacao = st.text_input("Digite sua senha de administrador para autorizar:", type="password", key="pwd_conciliacao")
+                        
+                        with col_btn:
+                            st.write("") # Espaçador
+                            if st.button("🚀 Confirmar e Enviar para o Banco", type="primary", use_container_width=True):
+                                # Busca a senha real no .env (mesma lógica do login)
+                                from main import get_secret
+                                senha_correta = (get_secret("123") or "").strip()
+                                
+                                if senha_confirmacao == senha_correta:
+                                    if proventos_ctrl.confirmar_recebimento_em_lote(selecionados):
+                                        st.success(f"Sucesso! {len(selecionados)} proventos foram registrados e agora fazem parte do seu histórico.")
+                                        st.rerun()
+                                    else:
+                                        st.error("Erro ao processar o lote. Verifique os logs.")
+                                else:
+                                    st.error("Senha de autorização incorreta!")
+                
+                # 2. Busca proventos FUTUROS (Apenas para exibição de Card)
+                with st.spinner("Calculando proventos futuros..."):
+                    df_previsao = proventos_ctrl.calcular_proventos_a_receber()
+                
+                total_projetado = df_previsao['Total a Receber (R$)'].sum() if not df_previsao.empty else 0.0
+
                 col_res_1, col_res_2 = st.columns(2)
                 with col_res_1:
                     st.metric(label=f"Total Recebido em {ano_selecionado}", value=formatar_moeda(df_filtrado['valor_total'].sum()))
                 with col_res_2:
-                    st.metric(label="Total a Receber", value="Em breve...")
+                    st.metric(label="Previsão Próximos Recebimentos", value=formatar_moeda(total_projetado))
                 
-                # --- NOVA UI: TABELA NA ESQUERDA, EXCLUIR NA DIREITA ---
-                st.markdown("---")
-                col_tabela_div, col_perigo_div = st.columns([2.5, 1])
-                
-                with col_tabela_div:
-                    st.markdown("##### 📋 Detalhamento dos Proventos")
-                    st.dataframe(df_filtrado, use_container_width=True, hide_index=True)
-                
-                with col_perigo_div:
-                    st.markdown("##### ⚠️ Excluir Lançamento")
-                    st.write("Identifique o ID na tabela ao lado para removê-lo.")
-                    colunas = df_filtrado.columns.tolist()
-                    col_id_nome = 'id_provento' if 'id_provento' in colunas else ('id_dividendo' if 'id_dividendo' in colunas else colunas[0])
-                    lista_ids_div = df_filtrado[col_id_nome].astype(str).tolist()
-                    id_div_selecionado = st.selectbox("ID do Dividendo", lista_ids_div)
-                    
-                    if st.button("Confirmar Exclusão", type="primary", use_container_width=True, key="btn_del_div"):
-                        sucesso = controller.excluir_dividendo(id_div_selecionado)
-                        if sucesso:
-                            st.success(f"Removido!")
-                            st.rerun()
-                        else:
-                            st.error("Erro ao excluir.")
-            else:
-                st.info("Nenhum registro encontrado para os filtros selecionados.")
-        else:
-            st.info("Sua base de dividendos está vazia.")
+                if not df_previsao.empty:
+                    with st.expander("🔍 Ver Detalhamento da Agenda Futura"):
+                        st.dataframe(df_previsao, use_container_width=True, hide_index=True)
+                # --------------------------------------------------
 
     with aba_historico:
         st.subheader("Histórico Completo (Compras/Vendas)")
         if not historico_df.empty:
-            # --- MESMA UI PREMIUM PARA O HISTÓRICO ---
             col_tabela_hist, col_perigo_hist = st.columns([2.5, 1])
             
             with col_tabela_hist:

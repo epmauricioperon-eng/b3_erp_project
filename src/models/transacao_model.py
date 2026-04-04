@@ -167,3 +167,46 @@ class TransacaoModel:
         carteira["preco_medio"] = carteira["valor_total_investido"] / carteira["quantidade_total"]
 
         return carteira
+    
+    def obter_quantidade_na_data_com(self, ticker: str, data_com_str: str) -> int:
+        """
+        Calcula a quantidade exata de cotas que o usuário possuía até a Data Com.
+        data_com_str: formato esperado 'DD/MM/YYYY' (padrão que vem do scraper).
+        """
+        df = self.obter_historico()
+        
+        if df.empty:
+            return 0
+
+        # 1. Filtra apenas o ativo desejado
+        df_ativo = df[df["ticker"] == ticker.upper()].copy()
+        if df_ativo.empty:
+            return 0
+
+        try:
+            # 2. Harmonização de Datas (O maior desafio em análise de dados)
+            # Converte a data de operação do seu banco (que vi na imagem que é YYYY-MM-DD HH:MM:SS)
+            df_ativo["data_operacao_dt"] = pd.to_datetime(df_ativo["data_operacao"])
+            
+            # Converte a data que o scraper trouxe da internet (DD/MM/YYYY)
+            data_com_dt = pd.to_datetime(data_com_str, format="%d/%m/%Y")
+            
+            # 3. O Filtro Temporal (A Máquina do Tempo)
+            # Pega apenas as operações que aconteceram ANTES ou NO DIA da Data Com
+            df_valido = df_ativo[df_ativo["data_operacao_dt"].dt.date <= data_com_dt.date()]
+            
+            if df_valido.empty:
+                return 0
+
+            # 4. Cálculo Real da Posição (Compras - Vendas)
+            compras = df_valido[df_valido["tipo"] == "COMPRA"]["quantidade"].sum()
+            vendas = df_valido[df_valido["tipo"] == "VENDA"]["quantidade"].sum()
+            
+            quantidade_elegivel = int(compras - vendas)
+            
+            logger.info(f"Posição de {ticker} na Data Com ({data_com_str}): {quantidade_elegivel} cotas elegíveis.")
+            return quantidade_elegivel
+
+        except Exception as e:
+            logger.error(f"Erro ao calcular posição na Data Com para {ticker}: {e}", exc_info=True)
+            return 0

@@ -99,7 +99,27 @@ class TransacaoController:
             df_posicao['status_rebalanceamento'] = df_posicao['peso_carteira'].apply(
                 lambda x: '🚨 Reduzir' if x > 15 else '✅ OK'
             )
+            # --- CÁLCULO DO YIELD ON COST (YOC) ---
+            df_div = self.obter_historico_completo_dividendos()
+            if not df_div.empty and 'ticker' in df_div.columns and 'valor_total' in df_div.columns:
+                # Agrupa e soma todos os dividendos já recebidos por cada fundo
+                divs_agrupados = df_div.groupby('ticker')['valor_total'].sum().reset_index()
+                divs_agrupados.rename(columns={'valor_total': 'total_dividendos_recebidos'}, inplace=True)
+                
+                # Une (Merge) a soma dos dividendos na nossa tabela principal da carteira
+                df_posicao = pd.merge(df_posicao, divs_agrupados, on='ticker', how='left')
+                
+                # Fundos que nunca pagaram dividendos ficam com NaN, substituímos por zero
+                df_posicao['total_dividendos_recebidos'] = df_posicao['total_dividendos_recebidos'].fillna(0)
+            else:
+                df_posicao['total_dividendos_recebidos'] = 0.0
 
+            # A Matemática Final do YOC (%)
+            df_posicao['yoc_pct'] = df_posicao.apply(
+                lambda row: (row['total_dividendos_recebidos'] / row['valor_total_investido']) * 100 if row['valor_total_investido'] > 0 else 0.0,
+                axis=1
+            )
+            # --------------------------------------
             total_investido = resumo.get('total_investido', 0.0)
             rentabilidade_total_rs = saldo_atual - total_investido
             rentabilidade_total_pct = (rentabilidade_total_rs / total_investido) * 100 if total_investido > 0 else 0.0
