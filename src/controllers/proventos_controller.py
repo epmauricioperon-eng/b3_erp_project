@@ -19,15 +19,34 @@ class ProventosController:
         self.dividendo_model = DividendoModel()
 
     def _limpar_valor(self, valor_str) -> float:
-        """Método utilitário interno para garantir que o valor vire um float puro."""
+        """Versão robusta: trata negativos, múltiplos pontos e espaços fantasmas."""
+        if pd.isna(valor_str) or valor_str == '' or valor_str is None:
+            return 0.0
+        
+        if isinstance(valor_str, (int, float)):
+            return float(valor_str)
+
+        # 1. Limpeza inicial: remove R$, espaços e caracteres não numéricos (exceto , . e -)
         v_str = str(valor_str).strip().replace('R$', '').replace(' ', '')
+        
+        # 2. Se houver ponto e vírgula (Ex: 1.250,30)
         if '.' in v_str and ',' in v_str:
+            # Remove o ponto (milhar) e troca a vírgula por ponto (decimal)
             v_str = v_str.replace('.', '').replace(',', '.')
+        
+        # 3. Se houver apenas vírgula (Ex: 1250,30)
         elif ',' in v_str:
             v_str = v_str.replace(',', '.')
+            
+        # 4. Caso especial: Múltiplos pontos como milhar sem vírgula (Ex: 1.250.000)
+        # Se houver mais de um ponto, provavelmente são todos separadores de milhar
+        elif v_str.count('.') > 1:
+            v_str = v_str.replace('.', '')
+
         try:
             return float(v_str)
         except ValueError:
+            logger.error(f"Não foi possível converter o valor: {valor_str}")
             return 0.0
 
     def calcular_proventos_a_receber(self) -> pd.DataFrame:

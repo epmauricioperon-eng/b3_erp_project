@@ -1292,3 +1292,777 @@ AttributeError: 'TransacaoModel' object has no attribute 'obter_resumo_carteira'
 2026-04-04 17:54:02,020 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
 2026-04-04 17:54:02,307 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
 2026-04-04 17:54:02,975 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:29:11,715 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:29:11,725 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:29:14,102 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:29:14,103 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:29:15,710 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:29:15,713 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:29:16,427 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:29:26,661 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:29:28,292 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:29:28,294 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:29:29,861 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:29:29,862 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:29:30,863 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:29:31,290 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:29:32,556 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:29:33,749 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:29:35,020 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:29:35,726 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:29:35,999 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:29:35,999 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:29:36,385 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:29:37,943 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:29:37,971 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:29:38,601 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:29:39,159 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:29:39,424 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 19:29:39,760 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:29:40,020 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 19:29:40,379 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:29:40,641 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 19:29:40,967 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:29:41,236 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 19:29:41,270 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:29:41,274 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:29:42,019 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:29:42,458 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:29:42,720 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 19:29:43,026 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:29:43,059 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:29:43,544 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:29:44,813 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:29:44,814 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:29:45,371 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:29:48,926 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:29:50,475 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:29:50,476 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:29:52,003 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:29:52,004 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:29:52,908 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:29:53,239 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:29:54,488 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:29:55,736 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:29:56,840 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:29:57,480 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:29:57,744 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:29:57,745 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:29:58,134 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:29:59,554 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:29:59,584 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:30:00,216 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:30:00,544 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:30:00,702 - src.models.transacao_model - ERROR - Erro ao ler histórico da aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 92, in obter_historico
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:30:01,020 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:30:01,183 - src.models.transacao_model - ERROR - Erro ao ler histórico da aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 92, in obter_historico
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:30:01,514 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:30:01,670 - src.models.transacao_model - ERROR - Erro ao ler histórico da aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 92, in obter_historico
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:30:01,985 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:30:02,146 - src.models.transacao_model - ERROR - Erro ao ler histórico da aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 92, in obter_historico
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:30:02,927 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:30:03,280 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:30:03,428 - src.models.transacao_model - ERROR - Erro ao ler histórico da aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 92, in obter_historico
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:30:04,127 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:30:10,584 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:30:10,586 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:30:11,829 - src.utils.google_sheets - ERROR - Erro ao abrir planilha 'ERP_B3_Database' / aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\utils\google_sheets.py", line 52, in open_worksheet
+    planilha = gc.open(SHEET_NAME)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\client.py", line 157, in open
+    return Spreadsheet(self.http_client, properties)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\spreadsheet.py", line 29, in __init__
+    metadata = self.fetch_sheet_metadata()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\spreadsheet.py", line 230, in fetch_sheet_metadata
+    return self.client.fetch_sheet_metadata(self.id, params=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 305, in fetch_sheet_metadata
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:30:11,834 - src.models.transacao_model - WARNING - TransacaoModel iniciado sem conexão com a aba 'Transacoes'.
+2026-04-09 19:30:11,834 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:30:13,023 - src.utils.google_sheets - ERROR - Erro ao abrir planilha 'ERP_B3_Database' / aba 'Dividendos': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\utils\google_sheets.py", line 52, in open_worksheet
+    planilha = gc.open(SHEET_NAME)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\client.py", line 157, in open
+    return Spreadsheet(self.http_client, properties)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\spreadsheet.py", line 29, in __init__
+    metadata = self.fetch_sheet_metadata()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\spreadsheet.py", line 230, in fetch_sheet_metadata
+    return self.client.fetch_sheet_metadata(self.id, params=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 305, in fetch_sheet_metadata
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:30:13,025 - src.models.dividendo_model - WARNING - DividendoModel iniciado sem conexão com a aba 'Dividendos'.
+2026-04-09 19:30:13,025 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:30:13,031 - src.models.transacao_model - ERROR - Worksheet 'Transacoes' não está inicializado.
+2026-04-09 19:30:13,045 - src.models.transacao_model - ERROR - Worksheet 'Transacoes' não está inicializado.
+2026-04-09 19:30:13,047 - src.controllers.transacao_controller - INFO - Nenhuma posição atual encontrada ou falha de conexão. Retornando painel zerado.
+2026-04-09 19:30:13,049 - src.models.transacao_model - ERROR - Worksheet 'Transacoes' não está inicializado.
+2026-04-09 19:30:13,052 - src.models.dividendo_model - ERROR - Worksheet 'Dividendos' não está inicializado.
+2026-04-09 19:30:13,076 - src.models.dividendo_model - ERROR - Worksheet 'Dividendos' não está inicializado.
+2026-04-09 19:30:25,882 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:30:25,886 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:30:27,505 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:30:27,507 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:30:29,020 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:30:29,021 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:30:29,598 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:30:33,121 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:30:34,725 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:30:34,728 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:30:36,261 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:30:36,264 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:30:37,156 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:30:37,610 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:30:38,807 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:30:40,052 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:30:41,203 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:30:42,111 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:30:42,369 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:30:42,370 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:30:42,832 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:30:44,349 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:30:44,378 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:30:45,074 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:30:45,420 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:30:45,720 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 19:30:46,063 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:30:46,339 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 19:30:46,699 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:30:46,968 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 19:30:47,285 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:30:47,552 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 19:30:48,229 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:30:48,596 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:30:48,867 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 19:30:49,553 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:30:57,537 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:30:57,542 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:30:59,170 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:30:59,172 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:31:00,775 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:31:00,776 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:31:01,311 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:31:04,489 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:31:05,986 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:31:05,987 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:31:07,483 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:31:07,485 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:31:08,511 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:31:08,863 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:31:10,113 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:31:11,276 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:31:12,423 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:31:13,137 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:31:13,400 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:31:13,401 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:31:13,763 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:31:15,226 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:31:15,254 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:31:15,916 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:31:16,248 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:31:16,512 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 19:31:16,852 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:31:17,133 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 19:31:17,463 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:31:17,722 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 19:31:18,066 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:31:18,404 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 19:31:19,101 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:31:19,472 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:31:19,738 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 19:31:20,405 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:31:31,729 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:31:31,732 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:31:33,457 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:31:33,460 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:31:34,969 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:31:34,969 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:31:35,580 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:31:38,570 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:31:40,107 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:31:40,107 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:31:41,570 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:31:41,572 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:31:42,498 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:31:42,902 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:31:44,048 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:31:45,612 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:31:46,903 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:31:47,704 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:31:47,962 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:31:47,963 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:31:48,379 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:31:50,084 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:31:50,118 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:31:50,727 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:31:51,052 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:31:51,322 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 19:31:51,645 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:31:51,912 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 19:31:52,256 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:31:52,544 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 19:31:52,871 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:31:53,129 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 19:31:53,806 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:31:54,172 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:31:54,444 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 19:31:55,217 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:32:02,263 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:32:02,265 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:32:03,787 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:32:03,788 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:32:05,364 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:32:05,365 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:32:05,881 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:32:08,392 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:32:09,754 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:32:09,755 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:32:11,075 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:32:11,077 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:32:11,500 - src.models.dividendo_model - ERROR - Erro ao ler dividendos: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\dividendo_model.py", line 64, in obter_todos_dividendos
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:32:11,837 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:32:12,098 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (11/03/2026): 379 cotas elegíveis.
+2026-04-09 19:32:12,099 - src.controllers.proventos_controller - INFO - Pendente encontrado: CPTS11 - R$ 34.11
+2026-04-09 19:32:12,364 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (11/02/2026): 265 cotas elegíveis.
+2026-04-09 19:32:12,364 - src.controllers.proventos_controller - INFO - Pendente encontrado: CPTS11 - R$ 23.85
+2026-04-09 19:32:12,645 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (13/01/2026): 265 cotas elegíveis.
+2026-04-09 19:32:12,646 - src.controllers.proventos_controller - INFO - Pendente encontrado: CPTS11 - R$ 23.85
+2026-04-09 19:32:12,910 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (10/12/2025): 265 cotas elegíveis.
+2026-04-09 19:32:12,911 - src.controllers.proventos_controller - INFO - Pendente encontrado: CPTS11 - R$ 23.85
+2026-04-09 19:32:13,174 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (12/11/2025): 265 cotas elegíveis.
+2026-04-09 19:32:13,176 - src.controllers.proventos_controller - INFO - Pendente encontrado: CPTS11 - R$ 23.85
+2026-04-09 19:32:13,443 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:32:13,725 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (27/02/2026): 155 cotas elegíveis.
+2026-04-09 19:32:13,726 - src.controllers.proventos_controller - INFO - Pendente encontrado: HGBS11 - R$ 26.35
+2026-04-09 19:32:14,864 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:32:15,129 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (27/02/2026): 19 cotas elegíveis.
+2026-04-09 19:32:15,130 - src.controllers.proventos_controller - INFO - Pendente encontrado: HGLG11 - R$ 20.9
+2026-04-09 19:32:16,201 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:32:16,473 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (27/02/2026): 43 cotas elegíveis.
+2026-04-09 19:32:16,474 - src.controllers.proventos_controller - INFO - Pendente encontrado: KNCR11 - R$ 43.0
+2026-04-09 19:32:17,541 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:32:17,814 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (27/02/2026): 429 cotas elegíveis.
+2026-04-09 19:32:17,814 - src.controllers.proventos_controller - INFO - Pendente encontrado: MXRF11 - R$ 42.9
+2026-04-09 19:32:18,075 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (30/01/2026): 289 cotas elegíveis.
+2026-04-09 19:32:18,076 - src.controllers.proventos_controller - INFO - Pendente encontrado: MXRF11 - R$ 28.9
+2026-04-09 19:32:18,338 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (30/12/2025): 289 cotas elegíveis.
+2026-04-09 19:32:18,338 - src.controllers.proventos_controller - INFO - Pendente encontrado: MXRF11 - R$ 28.9
+2026-04-09 19:32:18,603 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (28/11/2025): 289 cotas elegíveis.
+2026-04-09 19:32:18,604 - src.controllers.proventos_controller - INFO - Pendente encontrado: MXRF11 - R$ 28.9
+2026-04-09 19:32:19,136 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:32:19,386 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:32:19,386 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:32:19,650 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (27/02/2026): 520 cotas elegíveis.
+2026-04-09 19:32:19,651 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 62.4
+2026-04-09 19:32:19,899 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (30/01/2026): 520 cotas elegíveis.
+2026-04-09 19:32:19,900 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 62.4
+2026-04-09 19:32:20,160 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (30/12/2025): 520 cotas elegíveis.
+2026-04-09 19:32:20,160 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 57.2
+2026-04-09 19:32:20,414 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (28/11/2025): 520 cotas elegíveis.
+2026-04-09 19:32:20,414 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 57.2
+2026-04-09 19:32:20,701 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:32:20,966 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (27/02/2026): 31 cotas elegíveis.
+2026-04-09 19:32:20,967 - src.controllers.proventos_controller - INFO - Pendente encontrado: TRXF11 - R$ 28.83
+2026-04-09 19:32:22,260 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:32:22,513 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (11/03/2026): 372 cotas elegíveis.
+2026-04-09 19:32:22,514 - src.controllers.proventos_controller - INFO - Pendente encontrado: VGIA11 - R$ 53.94
+2026-04-09 19:32:22,771 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (11/02/2026): 259 cotas elegíveis.
+2026-04-09 19:32:22,772 - src.controllers.proventos_controller - INFO - Pendente encontrado: VGIA11 - R$ 37.55
+2026-04-09 19:32:23,041 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (13/01/2026): 259 cotas elegíveis.
+2026-04-09 19:32:23,041 - src.controllers.proventos_controller - INFO - Pendente encontrado: VGIA11 - R$ 36.26
+2026-04-09 19:32:23,304 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (10/12/2025): 259 cotas elegíveis.
+2026-04-09 19:32:23,305 - src.controllers.proventos_controller - INFO - Pendente encontrado: VGIA11 - R$ 36.26
+2026-04-09 19:32:23,561 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (12/11/2025): 259 cotas elegíveis.
+2026-04-09 19:32:23,561 - src.controllers.proventos_controller - INFO - Pendente encontrado: VGIA11 - R$ 38.85
+2026-04-09 19:32:23,570 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:32:24,092 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:32:24,364 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:32:24,612 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 19:32:24,870 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:32:25,120 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 19:32:25,401 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:32:25,653 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 19:32:25,917 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:32:26,174 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 19:32:26,675 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:32:26,979 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:32:27,235 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 19:32:27,744 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:33:43,688 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:33:43,691 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:33:45,473 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:33:45,475 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:33:46,971 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:33:46,972 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:33:47,537 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:33:51,114 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:33:52,593 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:33:52,593 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:33:54,093 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:33:54,095 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:33:55,039 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:33:55,704 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:33:56,888 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:33:58,075 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:33:59,436 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:34:00,275 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:34:00,538 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:34:00,540 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:34:00,932 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:34:02,441 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:34:02,465 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:34:03,062 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:34:03,429 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:34:03,701 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 19:34:04,046 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:34:04,313 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 19:34:04,648 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:34:05,144 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 19:34:05,471 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:34:05,743 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 19:34:06,399 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:34:06,888 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:34:07,167 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 19:34:08,108 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:34:09,199 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:34:09,203 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:34:10,765 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:34:10,765 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:34:12,397 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:34:12,399 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:34:12,934 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:34:16,069 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:34:17,422 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:34:17,422 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:34:18,771 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:34:18,773 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:34:19,545 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:34:20,012 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:34:21,067 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:34:22,130 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:34:23,254 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:34:23,721 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:34:23,987 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:34:23,988 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:34:24,262 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:34:25,673 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:34:25,681 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:34:26,266 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:34:26,515 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:34:26,767 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 19:34:27,042 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:34:27,300 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 19:34:27,574 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:34:27,838 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 19:34:28,099 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:34:28,360 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 19:34:28,852 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:34:29,124 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:34:29,386 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 19:34:29,896 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:36:27,134 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:36:27,136 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:36:28,724 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:36:28,725 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:36:30,282 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:36:30,283 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:36:30,841 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:36:33,845 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:36:35,434 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:36:35,434 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:36:37,955 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:36:37,956 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:36:39,084 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:36:39,454 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:36:40,575 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:36:41,708 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:36:42,806 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:36:43,341 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:36:43,633 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:36:43,634 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:36:43,907 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:36:45,525 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:36:45,535 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:36:46,234 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:36:46,491 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:36:46,763 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 19:36:47,058 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:36:47,318 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 19:36:47,619 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:36:47,882 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 19:36:48,357 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:36:48,632 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 19:36:49,143 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:36:49,410 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:36:49,686 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 19:36:50,177 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:37:22,133 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:37:22,137 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:37:22,291 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:37:22,292 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:37:23,782 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:37:23,784 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:37:23,930 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:37:23,934 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:37:25,431 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:37:25,431 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:37:25,477 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:37:25,483 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:37:25,991 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:37:28,960 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:37:30,569 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:37:30,571 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:37:32,020 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:37:32,023 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:37:32,934 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:37:33,269 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:37:34,555 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:37:35,803 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:37:37,045 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:37:37,702 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:37:37,964 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:37:37,965 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:37:38,330 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:37:39,893 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:37:39,934 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:37:40,538 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:37:40,960 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:37:41,232 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 19:37:41,563 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:37:41,828 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 19:37:42,194 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:37:42,455 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 19:37:42,776 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:37:43,039 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 19:37:43,683 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:37:44,029 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:37:44,305 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 19:37:44,972 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:38:19,292 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:38:19,294 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:38:19,452 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:38:19,456 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:38:21,031 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:38:21,032 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:38:21,189 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:38:21,193 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:38:22,662 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:38:22,663 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:38:22,971 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:38:22,973 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:38:23,907 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:38:26,847 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:38:28,389 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:38:28,391 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:38:30,167 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:38:30,169 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:38:31,058 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:38:31,442 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:38:32,599 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:38:33,713 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:38:34,953 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:38:35,716 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:38:36,006 - src.models.transacao_model - INFO - Posição de RURA11 na Data Com (31/03/2026): 528 cotas elegíveis.
+2026-04-09 19:38:36,008 - src.controllers.proventos_controller - INFO - Pendente encontrado: RURA11 - R$ 63.36
+2026-04-09 19:38:36,431 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:38:38,036 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:38:38,068 - src.controllers.proventos_controller - INFO - Confirmando recebimento de RURA11 - R$ 63.36
+2026-04-09 19:38:38,386 - src.models.dividendo_model - INFO - Dividendo de RURA11 salvo com sucesso.
+2026-04-09 19:38:38,614 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:38:38,619 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:38:40,188 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:38:40,189 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:38:41,683 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:38:41,684 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:38:42,398 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:38:45,102 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:38:46,674 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:38:46,676 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:38:48,272 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:38:48,274 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:38:49,161 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:38:49,497 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:38:50,811 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:38:52,048 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:38:53,435 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:38:54,091 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:38:54,440 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:38:55,869 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:38:55,881 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:38:56,557 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:38:56,916 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:38:57,082 - src.models.transacao_model - ERROR - Erro ao ler histórico da aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 92, in obter_historico
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:38:57,410 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:38:57,569 - src.models.transacao_model - ERROR - Erro ao ler histórico da aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 92, in obter_historico
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:38:57,901 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:38:58,088 - src.models.transacao_model - ERROR - Erro ao ler histórico da aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 92, in obter_historico
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:38:58,438 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:38:58,592 - src.models.transacao_model - ERROR - Erro ao ler histórico da aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 92, in obter_historico
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:38:59,468 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:38:59,852 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:39:00,006 - src.models.transacao_model - ERROR - Erro ao ler histórico da aba 'Transacoes': APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+Traceback (most recent call last):
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\src\models\transacao_model.py", line 92, in obter_historico
+    dados = self.worksheet.get_all_records()
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 562, in get_all_records
+    entire_sheet = self.get(
+        value_render_option=value_render_option,
+        pad_values=True,
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\worksheet.py", line 958, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\mauri\Desktop\Learning\b3_erp_project\.venv\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:754501374197'.
+2026-04-09 19:39:00,681 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:40:50,755 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 19:40:50,756 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:40:52,503 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:40:52,505 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:40:54,000 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:40:54,001 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 19:40:54,523 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 19:40:57,553 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:40:59,045 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 19:40:59,047 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 19:41:00,489 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 19:41:00,491 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 19:41:01,441 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:41:01,871 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:41:03,177 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:41:04,311 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:41:05,413 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:41:06,175 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:41:06,563 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:41:08,041 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 19:41:08,054 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 19:41:08,656 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 19:41:08,972 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 19:41:09,246 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 19:41:13,235 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 19:41:13,524 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 19:41:13,934 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 19:41:14,203 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 19:41:14,618 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 19:41:14,907 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 19:41:15,606 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 19:41:15,978 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 19:41:16,237 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 19:41:16,965 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 20:03:21,104 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-09 20:03:21,109 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 20:03:23,190 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 20:03:23,193 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 20:03:24,958 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 20:03:24,959 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-09 20:03:25,855 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-09 20:03:30,673 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 20:03:32,463 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-09 20:03:32,466 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-09 20:03:34,041 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-09 20:03:34,043 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-09 20:03:35,084 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 20:03:35,412 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 20:03:36,855 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 20:03:38,078 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 20:03:39,430 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 20:03:40,146 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 20:03:40,505 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 20:03:42,118 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-09 20:03:42,130 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-09 20:03:42,771 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-09 20:03:43,086 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-09 20:03:43,371 - src.models.transacao_model - INFO - Posição de HGBS11 na Data Com (31/03/2026): 359 cotas elegíveis.
+2026-04-09 20:03:43,712 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-09 20:03:43,999 - src.models.transacao_model - INFO - Posição de HGLG11 na Data Com (31/03/2026): 42 cotas elegíveis.
+2026-04-09 20:03:44,401 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-09 20:03:44,696 - src.models.transacao_model - INFO - Posição de KNCR11 na Data Com (31/03/2026): 59 cotas elegíveis.
+2026-04-09 20:03:45,126 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-09 20:03:45,387 - src.models.transacao_model - INFO - Posição de MXRF11 na Data Com (31/03/2026): 610 cotas elegíveis.
+2026-04-09 20:03:46,112 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-09 20:03:46,469 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-09 20:03:46,749 - src.models.transacao_model - INFO - Posição de TRXF11 na Data Com (31/03/2026): 74 cotas elegíveis.
+2026-04-09 20:03:47,421 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
