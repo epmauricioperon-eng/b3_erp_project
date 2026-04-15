@@ -5185,3 +5185,101 @@ AttributeError: 'DividendoModel' object has no attribute 'obter_resumo_dividendo
 2026-04-15 19:17:32,341 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
 2026-04-15 19:17:32,350 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (13/04/2026): 750 cotas elegíveis.
 2026-04-15 19:17:32,366 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (13/04/2026): 553 cotas elegíveis.
+2026-04-15 19:19:00,245 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-15 19:19:00,246 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:19:01,719 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:19:01,720 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:19:03,059 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:19:03,060 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-15 19:19:03,342 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-15 19:19:05,571 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:19:06,977 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:19:06,978 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:19:08,459 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:19:08,765 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:19:10,267 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:19:10,268 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:19:12,028 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:19:12,029 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-15 19:19:12,440 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-15 19:19:12,733 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-15 19:19:13,084 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-15 19:19:13,361 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-15 19:19:13,793 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-15 19:19:14,391 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-15 19:19:14,755 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-15 19:19:15,490 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-15 19:19:15,496 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-15 19:19:15,507 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (13/04/2026): 750 cotas elegíveis.
+2026-04-15 19:19:15,519 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (13/04/2026): 553 cotas elegíveis.
+2026-04-15 19:23:09,976 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-15 19:23:09,978 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:23:11,580 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:23:11,580 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:23:13,132 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:23:13,132 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-15 19:23:13,435 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-15 19:23:15,900 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:23:17,263 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:23:17,263 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:23:18,654 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:23:19,016 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:23:20,439 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:23:20,439 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:23:21,833 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:23:21,834 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-15 19:23:22,462 - src.services.scrapper_service - INFO - Proventos de CPTS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/cpts11
+2026-04-15 19:23:22,733 - src.services.scrapper_service - INFO - Proventos de HGBS11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hgbs11
+2026-04-15 19:23:23,021 - src.services.scrapper_service - INFO - Proventos de HGLG11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/hglg11
+2026-04-15 19:23:23,297 - src.services.scrapper_service - INFO - Proventos de KNCR11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/kncr11
+2026-04-15 19:23:23,817 - src.services.scrapper_service - INFO - Proventos de MXRF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/mxrf11
+2026-04-15 19:23:24,403 - src.services.scrapper_service - INFO - Proventos de RURA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/rura11
+2026-04-15 19:23:24,920 - src.services.scrapper_service - INFO - Proventos de TRXF11 extraídos com sucesso da rota: https://statusinvest.com.br/fundos-imobiliarios/trxf11
+2026-04-15 19:23:25,556 - src.services.scrapper_service - INFO - Proventos de VGIA11 extraídos com sucesso da rota: https://statusinvest.com.br/fiagros/vgia11
+2026-04-15 19:23:25,562 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-15 19:23:25,571 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (13/04/2026): 750 cotas elegíveis.
+2026-04-15 19:23:25,587 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (13/04/2026): 553 cotas elegíveis.
+2026-04-15 19:25:07,566 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-15 19:25:07,567 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:25:08,674 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-15 19:25:08,675 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:25:09,026 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:25:09,027 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:25:10,074 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:25:10,074 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:25:10,388 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:25:10,388 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-15 19:25:11,607 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:25:11,607 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-15 19:25:11,615 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-15 19:25:13,214 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:25:14,683 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:25:14,684 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:25:16,136 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:25:16,304 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:25:17,720 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:25:17,721 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:25:19,198 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:25:19,198 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-15 19:25:19,271 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-15 19:25:19,281 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (13/04/2026): 750 cotas elegíveis.
+2026-04-15 19:25:19,294 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (13/04/2026): 553 cotas elegíveis.
+2026-04-15 19:29:16,909 - __main__ - INFO - Iniciando o sistema B3 ERP...
+2026-04-15 19:29:16,910 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:29:18,516 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:29:18,517 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:29:19,888 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:29:19,889 - src.views.b3_view - INFO - Renderizando a View principal (Streamlit).
+2026-04-15 19:29:20,214 - src.services.cotacao_service - INFO - Service: Buscando cotações online para 8 ativos...
+2026-04-15 19:29:22,572 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:29:23,993 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:29:23,993 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:29:25,380 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:29:25,526 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:29:26,997 - src.utils.google_sheets - INFO - Aba 'Transacoes' aberta com sucesso.
+2026-04-15 19:29:26,997 - src.utils.google_sheets - INFO - Google Sheets autenticado via arquivo local: C:\Users\mauri\Desktop\Learning\b3_erp_project\credenciais_google.json
+2026-04-15 19:29:28,300 - src.utils.google_sheets - INFO - Aba 'Dividendos' aberta com sucesso.
+2026-04-15 19:29:28,301 - src.controllers.proventos_controller - INFO - Iniciando varredura de proventos pendentes de confirmação...
+2026-04-15 19:29:28,370 - src.controllers.proventos_controller - INFO - Iniciando motor de cálculo de proventos a receber...
+2026-04-15 19:29:28,378 - src.models.transacao_model - INFO - Posição de CPTS11 na Data Com (13/04/2026): 750 cotas elegíveis.
+2026-04-15 19:29:28,393 - src.models.transacao_model - INFO - Posição de VGIA11 na Data Com (13/04/2026): 553 cotas elegíveis.

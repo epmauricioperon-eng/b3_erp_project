@@ -69,14 +69,25 @@ def render_main_page(controller) -> None:
             if not df_grafico.empty:
                 col_donut, col_bar = st.columns(2)
                 
+                # Definição da cor única (Verde Militar)
+                VERDE_MILITAR = "#556B2F" 
+
                 with col_donut:
                     st.markdown("**Composição da Carteira**")
+                    
+                    # Criamos a lógica de bordas para a Pizza
+                    bordas_pizza = ['red' if p > 15 else 'white' for p in df_grafico['peso_carteira']]
+                    larguras_pizza = [3 if p > 15 else 1 for p in df_grafico['peso_carteira']]
+
                     fig_carteira = px.pie(
-                        df_grafico, values='valor_atual', names='ticker', hole=0.45
+                        df_grafico, values='valor_atual', names='ticker', hole=0.45,
+                        color_discrete_sequence=[VERDE_MILITAR] # Cor única para todos
                     )
+                    
                     fig_carteira.update_traces(
-                        textposition='inside', textinfo='percent+label',
-                        marker=dict(line=dict(color='#FFFFFF', width=2))
+                        textposition='inside', 
+                        textinfo='percent+label',
+                        marker=dict(line=dict(color=bordas_pizza, width=larguras_pizza))
                     )
                     fig_carteira.update_layout(showlegend=False, margin=dict(t=10, b=10, l=0, r=0), height=350)
                     st.plotly_chart(fig_carteira, use_container_width=True)
@@ -84,12 +95,24 @@ def render_main_page(controller) -> None:
                 with col_bar:
                     st.markdown("**Exposição por Ativo (Teto 15%)**")
                     df_bar = df_grafico.sort_values(by='peso_carteira', ascending=False)
-                    fig_bar = px.bar(df_bar, x='ticker', y='peso_carteira', text='peso_carteira')
                     
-                    cores_barras = ['#FF4B4B' if peso > 15 else '#1F77B4' for peso in df_bar['peso_carteira']]
-                    fig_bar.update_traces(texttemplate='%{text:.1f}%', textposition='outside', marker_color=cores_barras)
+                    # Criamos a lógica de bordas para as Barras
+                    bordas_barra = ['red' if p > 15 else 'rgba(0,0,0,0)' for p in df_bar['peso_carteira']]
+                    larguras_barra = [3 if p > 15 else 0 for p in df_bar['peso_carteira']]
+
+                    fig_bar = px.bar(
+                        df_bar, x='ticker', y='peso_carteira', text='peso_carteira',
+                        color_discrete_sequence=[VERDE_MILITAR] # Cor única para todos
+                    )
+                    
+                    fig_bar.update_traces(
+                        texttemplate='%{text:.1f}%', 
+                        textposition='outside',
+                        marker=dict(line=dict(color=bordas_barra, width=larguras_barra))
+                    )
+                    
                     fig_bar.add_hline(y=15, line_dash="dash", line_color="red", annotation_text="Limite 15%", annotation_position="top right")
-                    fig_bar.update_layout(xaxis_title=None, yaxis_title="Peso na Carteira (%)", margin=dict(t=10, b=10, l=0, r=0), height=350, yaxis_ticksuffix="%")
+                    fig_bar.update_layout(showlegend=False, xaxis_title=None, yaxis_title="Peso na Carteira (%)", margin=dict(t=10, b=10, l=0, r=0), height=350, yaxis_ticksuffix="%")
                     st.plotly_chart(fig_bar, use_container_width=True)
             
             st.markdown("---")
