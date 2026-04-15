@@ -1,123 +1,78 @@
 import pandas as pd
+import streamlit as st
 from src.utils.logger import get_logger
 from src.utils.google_sheets import open_worksheet
 
 logger = get_logger(__name__)
 
+def limpar_numero(valor) -> float:
+    if pd.isna(valor) or valor == '' or valor is None:
+        return 0.0
+    if isinstance(valor, (int, float)):
+        return float(valor)
+    v_str = str(valor).strip().replace('R$', '').replace(' ', '')
+    if '.' in v_str and ',' in v_str:
+        v_str = v_str.replace('.', '').replace(',', '.')
+    elif ',' in v_str:
+        v_str = v_str.replace(',', '.')
+    try:
+        return float(v_str)
+    except:
+        return 0.0
 
 class DividendoModel:
-    """Modelo conectado ao Google Sheets para dividendos."""
-
     def __init__(self):
-        self.gc = None
-        self.planilha = None
-        self.worksheet = None
-        self.disponivel = False
-
         self.gc, self.planilha, self.worksheet = open_worksheet("Dividendos")
         self.disponivel = self.worksheet is not None
 
-        if not self.disponivel:
-            logger.warning("DividendoModel iniciado sem conexão com a aba 'Dividendos'.")
-
     def _worksheet_pronto(self) -> bool:
-        if self.worksheet is None:
-            logger.error("Worksheet 'Dividendos' não está inicializado.")
-            return False
-        return True
+        return self.worksheet is not None
 
-    def salvar_dividendo(
-        self,
-        data_pagamento: str,
-        ticker: str,
-        tipo_provento: str,
-        quantidade_base: int,
-        valor_unitario: float,
-        valor_total: float
-    ) -> bool:
-        if not self._worksheet_pronto():
-            return False
-
+    def salvar_dividendo(self, data_pagamento: str, ticker: str, tipo_provento: str, quantidade: int, valor_unitario: float, valor_total: float) -> bool:
+        if not self._worksheet_pronto(): return False
         try:
-            nova_linha = [
-                data_pagamento,
-                str(ticker).upper().strip(),
-                str(tipo_provento).upper().strip(),
-                quantidade_base,
-                valor_unitario,
-                valor_total
-            ]
-
-            self.worksheet.append_row(nova_linha)
-            logger.info(f"Dividendo de {ticker} salvo com sucesso.")
+            nova_linha = [str(data_pagamento), str(ticker).upper().strip(), str(tipo_provento).upper().strip(), int(quantidade), float(valor_unitario), float(valor_total)]
+            self.worksheet.append_row(nova_linha, value_input_option="USER_ENTERED")
             return True
-
         except Exception as e:
-            logger.error(f"Erro ao salvar dividendo: {e}", exc_info=True)
+            logger.error(f"Erro ao salvar: {e}")
             return False
 
-    def obter_todos_dividendos(self) -> pd.DataFrame:
-        if not self._worksheet_pronto():
+    @st.cache_data(ttl=300)
+    def obter_todos_dividendos(_self) -> pd.DataFrame:
+        if not _self._worksheet_pronto():
             return pd.DataFrame()
 
         try:
-            dados = self.worksheet.get_all_records()
-            if not dados:
-                return pd.DataFrame()
+            # A MUDANÇA MÁGICA: get_all_values() ignora o padrão americano
+            linhas = _self.worksheet.get_all_values()
+            
+            if len(linhas) <= 1: # Só tem cabeçalho ou tá vazio
+                return pd.DataFrame(columns=['ticker', 'valor_total', 'ano', 'mes_numero', 'mes_nome'])
 
-            df = pd.DataFrame(dados)
+            # Monta o DataFrame manualmente e limpa os cabeçalhos
+            df = pd.DataFrame(linhas[1:], columns=linhas[0])
+            df.columns = [str(col).strip().lower().replace(' ', '_') for col in df.columns]
 
-            # Padroniza os nomes das colunas
-            df.columns = [str(col).strip().lower() for col in df.columns]
-
-            colunas_numericas = ["quantidade_base", "valor_unitario", "valor_total"]
-            for col in colunas_numericas:
+            # 1. O Lava Rápido (agora ele vai receber '61,03' e arrumar pra 61.03)
+            for col in ["valor_unitario", "valor_total", "quantidade"]:
                 if col in df.columns:
-                    df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+                    df[col] = df[col].apply(limpar_numero)
 
-            if "data_pagamento" in df.columns:
-                df["data_pagamento"] = pd.to_datetime(df["data_pagamento"], errors="coerce")
-                df["ano"] = df["data_pagamento"].dt.year
-                df["mes_nome"] = df["data_pagamento"].dt.strftime("%B")
-                df["mes_numero"] = df["data_pagamento"].dt.month
+            # 2. O Calendário
+            col_data = 'data_pagamento' if 'data_pagamento' in df.columns else (df.columns[0] if len(df.columns) > 0 else None)
+            if col_data:
+                df["data_pagamento_dt"] = pd.to_datetime(df[col_data], errors="coerce")
+                df["ano"] = df["data_pagamento_dt"].dt.year.fillna(0).astype(int)
+                df["mes_numero"] = df["data_pagamento_dt"].dt.month.fillna(0).astype(int)
+                
+                meses_pt = {1:'Jan', 2:'Fev', 3:'Mar', 4:'Abr', 5:'Mai', 6:'Jun', 7:'Jul', 8:'Ago', 9:'Set', 10:'Out', 11:'Nov', 12:'Dez'}
+                df["mes_nome"] = df["mes_numero"].map(meses_pt).fillna("N/A")
+            else:
+                df["ano"], df["mes_numero"], df["mes_nome"] = 0, 0, "N/A"
 
             return df
 
         except Exception as e:
-            logger.error(f"Erro ao ler dividendos: {e}", exc_info=True)
-            return pd.DataFrame()
-
-    def obter_resumo_dividendos(self) -> dict:
-        df = self.obter_todos_dividendos()
-        if df.empty or "valor_total" not in df.columns:
-            return {"total_recebido": 0.0}
-
-        total = df["valor_total"].sum()
-        return {"total_recebido": float(total)}
-    
-    def excluir_dividendo(self, id_provento: str) -> bool:
-        """Localiza e remove uma linha da aba de Dividendos baseada no ID único."""
-        if not self._worksheet_pronto():
-            return False
-            
-        try:
-            todas_as_linhas = self.worksheet.get_all_values()
-            linha_para_excluir = -1
-            
-            # Procura o ID (assumindo que o ID do provento está na primeira coluna - índice 0)
-            for i, linha in enumerate(todas_as_linhas):
-                if str(linha[0]) == str(id_provento):
-                    linha_para_excluir = i + 1 
-                    break
-
-            if linha_para_excluir != -1:
-                self.worksheet.delete_rows(linha_para_excluir)
-                logger.info(f"Dividendo ID {id_provento} excluído com sucesso.")
-                return True
-                
-            logger.warning(f"Dividendo ID {id_provento} não encontrado para exclusão.")
-            return False
-
-        except Exception as e:
-            logger.error(f"Erro ao excluir dividendo {id_provento}: {e}", exc_info=True)
-            return False
+            logger.error(f"Erro crítico no model de dividendos: {e}")
+            return pd.DataFrame(columns=['ticker', 'valor_total', 'ano', 'mes_numero', 'mes_nome'])

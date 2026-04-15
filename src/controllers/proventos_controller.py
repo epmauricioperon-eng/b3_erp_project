@@ -190,6 +190,27 @@ class ProventosController:
         
         return sucesso_global
 
+    # =========================================================================
+    # FUNÇÕES ADICIONADAS PARA O FUNCIONAMENTO DA VIEW (CARD E ABA DIVIDENDOS)
+    # =========================================================================
+
+    def obter_resumo_dividendos_total(self) -> dict:
+        """Calcula a soma de todos os dividendos já recebidos na história."""
+        try:
+            df = self.dividendo_model.obter_todos_dividendos()
+            if df.empty or 'valor_total' not in df.columns:
+                return {'total_recebido': 0.0}
+            
+            total_acumulado = df['valor_total'].sum()
+            return {'total_recebido': float(total_acumulado)}
+        except Exception as e:
+            logger.error(f"Erro ao somar dividendos globais: {e}", exc_info=True)
+            return {'total_recebido': 0.0}
+
+    def obter_historico_completo_dividendos(self) -> pd.DataFrame:
+        """Retorna o DataFrame completo de dividendos para a aba de histórico/gráficos."""
+        return self.dividendo_model.obter_todos_dividendos()
+
 # --- BLOCO DE TESTE ---
 if __name__ == "__main__":
     import logging
@@ -198,3 +219,4 @@ if __name__ == "__main__":
     print("Testando instâncias de métodos:")
     print("Possui previsão? ", hasattr(controller, 'calcular_proventos_a_receber'))
     print("Possui pendência? ", hasattr(controller, 'obter_proventos_pendentes_de_confirmacao'))
+    print("Possui resumo global? ", hasattr(controller, 'obter_resumo_dividendos_total'))

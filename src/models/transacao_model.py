@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 from datetime import datetime
 from src.utils.logger import get_logger
 from src.utils.google_sheets import open_worksheet
@@ -83,36 +84,32 @@ class TransacaoModel:
         except Exception as e:
             logger.error(f"Erro ao excluir transação {id_transacao}: {e}", exc_info=True)
             return False
-
-    def obter_historico(self) -> pd.DataFrame:
-        if not self._worksheet_pronto():
+    @st.cache_data(ttl=300)
+    def obter_historico(_self) -> pd.DataFrame: # <--- _self COM UNDERLINE
+        if not _self._worksheet_pronto():       # <--- _self COM UNDERLINE
             return pd.DataFrame()
 
         try:
-            dados = self.worksheet.get_all_records()
+            dados = _self.worksheet.get_all_records() # <--- _self COM UNDERLINE
             if not dados:
                 return pd.DataFrame()
 
             df = pd.DataFrame(dados)
             df.columns = [str(col).strip().lower() for col in df.columns]
 
-            # --- A SUA HIGIENIZAÇÃO ORIGINAL QUE FUNCIONA PERFEITAMENTE ---
+            # --- SUA HIGIENIZAÇÃO CONTINUA INTACTA ---
             def limpar_financeiro(val):
                 if isinstance(val, (int, float)):
                     return float(val)
-                
                 v_str = str(val).strip()
                 if not v_str or v_str.upper() == 'NAN':
                     return 0.0
-                
                 if ',' in v_str:
                     v_str = v_str.replace('.', '').replace(',', '.')
-                
                 try:
                     return float(v_str)
                 except ValueError:
                     return 0.0
-            # -------------------------------------------------------------
 
             colunas_financeiras = ["preco_unitario", "taxas", "total_operacao"]
             for col in colunas_financeiras:
@@ -122,12 +119,10 @@ class TransacaoModel:
             if "quantidade" in df.columns:
                 df["quantidade"] = pd.to_numeric(df["quantidade"], errors="coerce").fillna(0)
 
-            # --- SUA VACINA ORIGINAL CONTRA ERRO DO PYARROW ---
             colunas_texto = ["id_transacao", "ticker", "tipo", "data_operacao"]
             for col in colunas_texto:
                 if col in df.columns:
                     df[col] = df[col].astype(str)
-            # ------------------------------------------------------------------
 
             return df
 

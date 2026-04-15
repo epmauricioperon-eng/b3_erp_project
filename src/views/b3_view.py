@@ -34,7 +34,7 @@ def render_main_page(controller) -> None:
     
     resumo_rv, posicao_df = controller.obter_painel_consolidado()
     historico_df = controller.obter_historico()
-    resumo_div_global = controller.obter_resumo_dividendos_total()
+    resumo_div_global = ProventosController().obter_resumo_dividendos_total()
     
     def formatar_moeda(valor):
         return f"R$ {valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
@@ -146,7 +146,7 @@ def render_main_page(controller) -> None:
             if not df_filtrado.empty:
                 dividendos_anuais = df_filtrado.groupby(['mes_nome', 'mes_numero'])['valor_total'].sum().reset_index().sort_values(by='mes_numero')
                 fig = px.bar(
-                    dividendos_anuais, x='mes_nome', y='valor_total', text='valor_total', 
+                    dividendos_anuais, x='mes_nome', y='valor_total', text='valor_total',
                     labels={'mes_nome': 'Mês', 'valor_total': 'Valor Recebido (R$)'}, template="plotly_white"
                 )
                 fig.update_traces(
@@ -204,6 +204,7 @@ def render_main_page(controller) -> None:
                                 
                                 if senha_confirmacao == senha_correta:
                                     if proventos_ctrl.confirmar_recebimento_em_lote(selecionados):
+                                        st.cache_data.clear()
                                         st.success(f"Sucesso! {len(selecionados)} proventos foram registrados e agora fazem parte do seu histórico.")
                                         st.rerun()
                                     else:
@@ -247,6 +248,7 @@ def render_main_page(controller) -> None:
                     if st.button("Confirmar Exclusão", type="primary", use_container_width=True, key="btn_del_hist"):
                         sucesso = controller.excluir_transacao(id_selecionado)
                         if sucesso:
+                            st.cache_data.clear()
                             st.success(f"Removido!")
                             st.rerun()
                         else:
@@ -278,6 +280,7 @@ def render_main_page(controller) -> None:
                         data_operacao.strftime("%Y-%m-%d"), ticker.strip().upper(), tipo, quantidade, preco_unitario, taxas
                     )
                     if sucesso:
+                        st.cache_data.clear()
                         st.success("Operação registrada com sucesso!")
                         st.rerun()
                     else:
@@ -300,6 +303,7 @@ def render_main_page(controller) -> None:
                         quantidade_base, valor_unitario, valor_total
                     )
                     if sucesso:
+                        st.cache_data.clear()
                         st.success(f"Provento de {ticker.upper()} registrado com sucesso!")
                         st.rerun()
                     else:

@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 from io import StringIO
+import streamlit as st
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -19,7 +20,12 @@ class ProventosScraperService:
             'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7'
         }
 
-    def buscar_ultimos_dividendos(self, ticker: str) -> pd.DataFrame:
+    # 2. COLOQUE ESTA ETIQUETA AQUI (Guarda na memória por 1 hora / 3600 segundos)
+    
+    @st.cache_data(ttl=3600)
+
+
+    def buscar_ultimos_dividendos(_self, ticker: str) -> pd.DataFrame:
         ticker_limpo = str(ticker).strip().lower()
         
         # Mapeamento das 3 possíveis rotas de ativos no StatusInvest
@@ -31,7 +37,7 @@ class ProventosScraperService:
 
         for url in rotas:
             try:
-                response = requests.get(url, headers=self.headers, timeout=10)
+                response = requests.get(url, headers=_self.headers, timeout=10)
                 response.raise_for_status() 
                 
                 # Transforma o HTML em texto legível para o Pandas extrair as tabelas
