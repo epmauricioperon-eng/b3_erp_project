@@ -8,3 +8,5 @@ data/
 # Pastas do Python e Ambiente Virtual
 __pycache__/
 .venv/
+
+*.pdf
