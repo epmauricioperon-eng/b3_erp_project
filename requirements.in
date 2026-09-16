@@ -1,7 +1,2 @@
 streamlit
-pandas
-gspread
-plotly
-lxml
-html5lib
 python-dotenv
