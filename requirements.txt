@@ -105,3 +105,4 @@ watchdog==6.0.0
     # via streamlit
 websockets==16.1.1
     # via streamlit
+plotly
