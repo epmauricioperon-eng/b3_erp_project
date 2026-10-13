@@ -141,10 +141,14 @@ class ProventosController:
                         
                     data_db_format = data_pagamento_dt.strftime("%Y-%m-%d")
                     
-                    # Verificação no Banco de Dados se já foi recebido
+                    # Verificação no Banco de Dados se já foi recebido (Chave Composta Tripla)
                     ja_recebido = False
                     if not df_recebidos.empty:
-                        filtro = (df_recebidos['ticker'] == ticker) & (df_recebidos['data_pagamento'] == data_db_format)
+                        filtro = (
+                            (df_recebidos['ticker'] == ticker) & 
+                            (df_recebidos['data_pagamento'] == data_db_format) & 
+                            (df_recebidos['tipo_provento'].astype(str).str.upper() == tipo_str)
+                        )
                         if not df_recebidos[filtro].empty:
                             ja_recebido = True
                     
